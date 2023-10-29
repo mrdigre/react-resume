@@ -156,11 +156,10 @@ const contactConfig = {
 };
 
 const socialprofils = {
-  github: "https://github.com",
-  facebook: "https://facebook.com",
-  linkedin: "https://linkedin.com",
-  twitter: "https://twitter.com",
+  github: "https://github.com/mrdigre",
+  linkedin: "https://linkedin.com/in/mrdigre",
 };
+
 export {
   meta,
   dataabout,
