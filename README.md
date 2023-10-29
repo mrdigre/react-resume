@@ -10,8 +10,6 @@ A simple portfolio built with React.
 - React-Bootstrap
 - Edit Content From One Place
 
-### Setup
-
 ### Thanks
 
 
