@@ -8,19 +8,19 @@ const meta = {
 const introdata = {
   title: "I’m Manuel Digregorio",
   animated: {
-    first: "Engineering is my unwavering passion",
-    second: "Solving complex problems is where I find my true joy",
-    third: "My heart races at the prospect of constant learning",
+    first: "Engineer",
+    second: "Problem solver",
+    third: "Commited to results",
   },
-  description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at nisl euismod urna bibendum",
+  description: "Welcome to my personal site. Click around to uncover more",
+
   your_img_url: "https://images.unsplash.com/photo-1514790193030-c89d266d5a9d",
 };
 
 const dataabout = {
-  title: "a bit about my self",
+  title: "A bit about myself",
   aboutme:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis dolor id ligula semper elementum feugiat pretium nulla. Nunc non commodo dolor. Nunc mollis dignissim facilisis. Morbi ut magna ultricies.",
+    "Engineering has been the driving force in my life's journey, a passion that has shaped my career. Graduating with a degree in Industrial Engineering in 2012 marked the beginning of my professional quest. A relentless learner, I've never ceased my educational pursuits. Over the last two years, my self-driven studies in software development have transformed a hobby into a thriving profession. With over a decade of professional experience, I have honed my expertise across a spectrum of fields, spanning from commerce and management to the dynamic realm of software development. What truly ignites my enthusiasm are projects that leave a meaningful impact on people's lives, projects that make lives better. My journey is a testament to my unwavering commitment to learning, my passion for innovation, and my dedication to creating solutions that matter.",
 };
 const worktimeline = [
   {
