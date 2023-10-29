@@ -7,7 +7,7 @@ import {
   meta,
   worktimeline,
   skills,
-  services,
+  experience,
 } from "../../content_option";
 
 export const About = () => {
@@ -84,7 +84,7 @@ export const About = () => {
             <h3 className="color_sec py-4">Experience</h3>
           </Col>
           <Col lg="7">
-            {services.map((data, i) => {
+            {experience.map((data, i) => {
               return (
                 <div className="service_ py-4" key={i}>
                   <h5 className="service__title">{data.title}</h5>
