@@ -1,16 +1,16 @@
-const logotext = "MANUEL";
+const logotext = "home";
 const meta = {
   title: "Manuel Digregorio",
   description:
-    "I’m Manuel Digregorio data scientist _ Full stack devloper,currently working in Berlin",
+    "I’m Manuel Digregorio industrial engineer & full stack devloper",
 };
 
 const introdata = {
   title: "I’m Manuel Digregorio",
   animated: {
-    first: "I love coding",
-    second: "I code cool websites",
-    third: "I develop mobile apps",
+    first: "Engineering is my unwavering passion",
+    second: "Solving complex problems is where I find my true joy",
+    third: "My heart races at the prospect of constant learning",
   },
   description:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at nisl euismod urna bibendum",
