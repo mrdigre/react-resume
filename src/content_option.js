@@ -150,9 +150,9 @@ const contactConfig = {
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vehicula eu nunc et sollicitudin. Cras pulvinar, nisi at imperdiet pharetra. ",
   // creat an emailjs.com account
   // check out this tutorial https://www.emailjs.com/docs/examples/reactjs/
-  YOUR_SERVICE_ID: "service_id",
-  YOUR_TEMPLATE_ID: "template_id",
-  YOUR_USER_ID: "user_id",
+  YOUR_SERVICE_ID: "service_nlkn16m",
+  YOUR_TEMPLATE_ID: "template_lxyf2rc",
+  YOUR_USER_ID: "nAQnsxU_Xy5GejOWd",
 };
 
 const socialprofils = {
