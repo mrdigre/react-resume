@@ -22,21 +22,11 @@ const dataabout = {
   aboutme:
     "Engineering has been the driving force in my life's journey, a passion that has shaped my career. Graduating with a degree in Industrial Engineering in 2012 marked the beginning of my professional quest. A relentless learner, I've never ceased my educational pursuits. Over the last two years, my self-driven studies in software development have transformed a hobby into a thriving profession. With over a decade of professional experience, I have honed my expertise across a spectrum of fields, spanning from commerce and management to the dynamic realm of software development. What truly ignites my enthusiasm are projects that leave a meaningful impact on people's lives, projects that make lives better. My journey is a testament to my unwavering commitment to learning, my passion for innovation, and my dedication to creating solutions that matter.",
 };
-const worktimeline = [
+const academic = [
   {
-    jobtitle: "Designer of week",
-    where: "YAdfi",
-    date: "2020",
-  },
-  {
-    jobtitle: "Designer of week",
-    where: "Jamalya",
-    date: "2019",
-  },
-  {
-    jobtitle: "Territory Manager",
-    where: "Pan American Enery",
-    date: "2019",
+    degree: "Industrial Engineer",
+    where: "Universidad Austral",
+    date: "2012",
   },
 ];
 
@@ -179,7 +169,7 @@ export {
   meta,
   dataabout,
   dataportfolio,
-  worktimeline,
+  academic,
   skills,
   experience,
   introdata,
