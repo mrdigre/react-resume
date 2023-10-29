@@ -6,7 +6,7 @@ import {
   dataabout,
   meta,
   academic,
-  skills,
+  languages,
   experience,
 } from "../../content_option";
 
@@ -47,6 +47,7 @@ export const About = () => {
                   <h5 className="service__title">
                     {data.degree} | {data.where} | {data.date}
                   </h5>
+                  <p>Buenos Aires, Argentina</p>
                 </div>
               );
             })}
@@ -71,10 +72,10 @@ export const About = () => {
 
         <Row className="sec_sp">
           <Col lg="5">
-            <h3 className="color_sec py-4">Skills</h3>
+            <h3 className="color_sec py-4">Languages (Spoken & Written)</h3>
           </Col>
           <Col lg="7">
-            {skills.map((data, i) => {
+            {languages.map((data, i) => {
               return (
                 <div key={i}>
                   <h3 className="progress-title">{data.name}</h3>
@@ -85,7 +86,7 @@ export const About = () => {
                         width: `${data.value}%`,
                       }}
                     >
-                      <div className="progress-value">{data.value}%</div>
+                      <div className="progress-value">{data.proficiency}</div>
                     </div>
                   </div>
                 </div>
@@ -93,6 +94,7 @@ export const About = () => {
             })}
           </Col>
         </Row>
+        <Row className="sec-sp"></Row>
       </Container>
     </HelmetProvider>
   );

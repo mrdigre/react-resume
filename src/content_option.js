@@ -30,26 +30,22 @@ const academic = [
   },
 ];
 
-const skills = [
+const languages = [
   {
-    name: "Python",
-    value: 90,
+    name: "English",
+    proficiency: "Fluent",
+    value: 100,
   },
   {
-    name: "Djano",
-    value: 85,
+    name: "Italian",
+    proficiency: "Basic",
+    value: 25,
   },
+
   {
-    name: "Javascript",
-    value: 80,
-  },
-  {
-    name: "React",
-    value: 60,
-  },
-  {
-    name: "Jquery",
-    value: 85,
+    name: "Spanish",
+    proficiency: "Fluent",
+    value: 100,
   },
 ];
 
@@ -170,7 +166,7 @@ export {
   dataabout,
   dataportfolio,
   academic,
-  skills,
+  languages,
   experience,
   introdata,
   contactConfig,
