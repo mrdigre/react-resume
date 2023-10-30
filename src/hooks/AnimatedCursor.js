@@ -95,7 +95,7 @@ function CursorCore({
   outerSize = 8,
   outerScale = 6,
   innerScale = 0.6,
-  trailingSpeed = 20,
+  trailingSpeed = 2,
   clickables = [
     "a",
     'input[type="text"]',
