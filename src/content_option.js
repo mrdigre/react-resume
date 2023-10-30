@@ -49,6 +49,31 @@ const languages = [
   },
 ];
 
+const skills = [
+  {
+    title: "Front-End",
+    skills: "CSS, HTML, JavaScript, TypeScript",
+  },
+
+  {
+    title: "React.js Ecosystem",
+    skills: "React.js, Next.js, UI libraries",
+  },
+  {
+    title: "Back-end Technologies",
+    skills: "Node.js, Express.js, MongoDB, PostgreSQL, RESTful API Design",
+  },
+  {
+    title: "Development Practicies",
+    skills: "Git Version Control, Agile Methodologies",
+  },
+  {
+    title: "Soft Skills",
+    skills:
+      "Professionalism, Effective Communication, Autonomy and Self-Motivation, Cross-cultural Awareness",
+  },
+];
+
 const experience = [
   {
     title: "Mercap | React Software Developer Jr | 2022 - 2023",
@@ -65,89 +90,33 @@ const experience = [
     description:
       "As the Territory Manager, I navigated through various business units and diverse markets, including B2B in marine fuels and B2C in retail service stations. At this possition I held the role of the company's primary business representative. During my tenure, I played a pivotal role in spearheading a transformative re-branding project, transitioning from ESSO to Axion Energy across the Cuyo zone. This encompassed everything from contract negotiations to ensuring a successful retail store rebranding process, all while actively driving new business initiatives and boosting product sales.",
   },
-];
-
-const dataportfolio = [
   {
-    img: "https://picsum.photos/400/?grayscale",
+    title: "Axion Energy | Engineering Analyst | 2012 - 2015",
     description:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
-  },
-  {
-    img: "https://picsum.photos/400/800/?grayscale",
-    description:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
-  },
-  {
-    img: "https://picsum.photos/400/?grayscale",
-    description:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
-  },
-  {
-    img: "https://picsum.photos/400/600/?grayscale",
-    description:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
-  },
-  {
-    img: "https://picsum.photos/400/300/?grayscale",
-    description:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
-  },
-  {
-    img: "https://picsum.photos/400/700/?grayscale",
-    description:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
-  },
-
-  {
-    img: "https://picsum.photos/400/600/?grayscale",
-    description:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
-  },
-  {
-    img: "https://picsum.photos/400/300/?grayscale",
-    description:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
-  },
-  {
-    img: "https://picsum.photos/400/?grayscale",
-    description:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
-  },
-  {
-    img: "https://picsum.photos/400/550/?grayscale",
-    description:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
-  },
-  {
-    img: "https://picsum.photos/400/?grayscale",
-    description:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
-  },
-  {
-    img: "https://picsum.photos/400/700/?grayscale",
-    description:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
+      "As an Engineering Analyst, I played a pivotal role in project management by offering essential support and analytical insights. My responsibilities included providing data-driven solutions, technical expertise, and project coordination assistance to enhance decision-making processes. This support contributed to the successful execution of projects and optimized workflow efficiency.",
   },
 ];
+
+// const dataportfolio = [
+//   {
+//     img: "https://picsum.photos/400/?grayscale",
+//     description:
+//       "The wisdom of life consists in the elimination of non-essentials.",
+//     link: "#",
+//   },
+//   {
+//     img: "https://picsum.photos/400/800/?grayscale",
+//     description:
+//       "The wisdom of life consists in the elimination of non-essentials.",
+//     link: "#",
+//   },
+// ];
 
 const contactConfig = {
-  YOUR_EMAIL: "name@domain.com",
-  YOUR_FONE: "(555)123-4567",
+  YOUR_EMAIL: "manuel@gmail.com",
+
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vehicula eu nunc et sollicitudin. Cras pulvinar, nisi at imperdiet pharetra. ",
+    "Let's start a conversation! Use the form to send me a message. I'm looking forward to hearing from you.",
   // creat an emailjs.com account
   // check out this tutorial https://www.emailjs.com/docs/examples/reactjs/
   YOUR_SERVICE_ID: "service_nlkn16m",
@@ -163,7 +132,6 @@ const socialprofils = {
 export {
   meta,
   dataabout,
-  dataportfolio,
   academic,
   languages,
   experience,
@@ -171,4 +139,5 @@ export {
   contactConfig,
   socialprofils,
   logotext,
+  skills,
 };

@@ -8,6 +8,7 @@ import {
   academic,
   languages,
   experience,
+  skills,
 } from "../../content_option";
 
 export const About = () => {
@@ -19,6 +20,7 @@ export const About = () => {
           <title> About | {meta.title}</title>
           <meta name="description" content={meta.description} />
         </Helmet>
+
         <Row className="mb-5 mt-3 pt-md-3">
           <Col lg="8">
             <h1 className="display-4 mb-4">About me</h1>
@@ -51,6 +53,22 @@ export const About = () => {
                 </div>
               );
             })}
+          </Col>
+        </Row>
+
+        <Row className="sec_sp">
+          <Col lg="5">
+            <h3 className="color_sec py-4">Skills</h3>
+          </Col>
+          <Col lg="7">
+            <div>
+              {skills.map((data, i) => (
+                <div key={i}>
+                  <h5 className="service__title">{data.title}</h5>
+                  <p className="service_desc">{data.skills}</p>
+                </div>
+              ))}
+            </div>
           </Col>
         </Row>
 
