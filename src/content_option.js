@@ -33,7 +33,7 @@ const academic = [
 const languages = [
   {
     name: "English",
-    proficiency: "Fluent",
+    proficiency: "Bilingual",
     value: 100,
   },
   {
@@ -44,7 +44,7 @@ const languages = [
 
   {
     name: "Spanish",
-    proficiency: "Fluent",
+    proficiency: "Native",
     value: 100,
   },
 ];
@@ -78,7 +78,7 @@ const experience = [
   {
     title: "Mercap | React Software Developer Jr | 2022 - 2023",
     description:
-      "This was my first professional experience as a software developer, where I achieved my goal of turning a hobby into a professional career. I contributed to the development of React.js applications using the Next.js framework, with a focus on creating efficient code. I actively researched and implemented innovative approaches to enhance code quality and optimize application performance. Additionally, I handled code maintenance tasks to ensure the smooth functioning and reliability of the applications. </br>This role provided me with the opportunity to learn how software development workflows function within a team, utilizing git version control, and helped me gain valuable experience in this field.",
+      "This was my first professional experience as a software developer, where I achieved my goal of turning a hobby into a professional career. I contributed to the development of React.js applications using the Next.js framework, with a focus on creating efficient code. I actively researched and implemented innovative approaches to enhance code quality and optimize application performance. Additionally, I handled code maintenance tasks to ensure the smooth functioning and reliability of the applications. This role provided me with the opportunity to learn how software development workflows function within a team, utilizing git version control, and helped me gain valuable experience in this field.",
   },
   {
     title: "Envases Los Andes | Generl Manager | 2020 - 2022",
@@ -113,7 +113,7 @@ const experience = [
 // ];
 
 const contactConfig = {
-  YOUR_EMAIL: "manuel@gmail.com",
+  YOUR_EMAIL: "manudigregorio@gmail.com",
 
   description:
     "Let's start a conversation! Use the form to send me a message. I'm looking forward to hearing from you.",
