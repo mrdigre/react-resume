@@ -1,4 +1,4 @@
-const logotext = "home";
+const logotext = "Manuel";
 const meta = {
   title: "Manuel Digregorio",
   description:
