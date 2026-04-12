@@ -1,10 +1,8 @@
 import React, { useState, useRef } from "react";
 import {
-  FiGithub,
   FiLinkedin,
   FiMail,
   FiMapPin,
-  FiArrowUpRight,
   FiSend,
 } from "react-icons/fi";
 import emailjs from "emailjs-com";
@@ -13,42 +11,38 @@ import {
   currentRole,
   projects,
   experience,
-  techStack,
+  competencies,
   contactConfig,
 } from "../content_option";
 import "./App.css";
 
 /* ─────────────────────────────────────────────────────────
-   Design tokens — single source of truth for colors
+   Design tokens — Executive Dark
+   Monochrome. No accent colors. Typography does the work.
 ───────────────────────────────────────────────────────── */
 const T = {
-  bg:          "#070708",
-  card:        "#0F0F12",
-  cardAlt:     "#13131A",
-  border:      "#1E1E24",
-  borderHover: "#2E2E38",
-  text:        "#F2F2F5",
-  muted:       "#71717A",
-  faint:       "#3F3F46",
-  indigo:      "#6366F1",
-  indigoFg:    "#818CF8",
-  amber:       "#F59E0B",
-  green:       "#10B981",
-  greenFg:     "#34D399",
+  bg:          "#0A0A0A",
+  card:        "#0F0F0F",
+  cardAlt:     "#111111",
+  border:      "#1C1C1C",
+  borderHover: "#282828",
+  text:        "#FFFFFF",
+  sub:         "#D4D4D4",
+  muted:       "#737373",
+  faint:       "#3A3A3A",
 };
 
 /* ─────────────────────────────────────────────────────────
-   Reusable primitives
+   Primitives
 ───────────────────────────────────────────────────────── */
-function Card({ children, className = "", style = {} }) {
+function Card({ children, className = "" }) {
   const [hovered, setHovered] = React.useState(false);
   return (
     <div
-      className={`rounded-2xl p-5 h-full flex flex-col transition-all duration-300 ${className}`}
+      className={`rounded-xl p-5 h-full flex flex-col transition-colors duration-300 ${className}`}
       style={{
         backgroundColor: T.card,
         border: `1px solid ${hovered ? T.borderHover : T.border}`,
-        ...style,
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -58,10 +52,10 @@ function Card({ children, className = "", style = {} }) {
   );
 }
 
-function Label({ children }) {
+function SectionLabel({ children }) {
   return (
     <p
-      className="text-[0.6rem] font-medium uppercase tracking-[0.2em] mb-4"
+      className="font-mono text-[0.58rem] uppercase tracking-[0.22em] mb-5"
       style={{ color: T.faint }}
     >
       {children}
@@ -69,120 +63,58 @@ function Label({ children }) {
   );
 }
 
-function Tag({ children, accent = T.indigo }) {
-  return (
-    <span
-      className="font-mono text-[0.68rem] px-2 py-0.5 rounded-md border whitespace-nowrap"
-      style={{
-        backgroundColor: accent + "18",
-        borderColor: accent + "35",
-        color: accent,
-      }}
-    >
-      {children}
-    </span>
-  );
-}
-
-function StatusBadge({ status }) {
-  const isLive = status === "live";
-  const color = isLive ? T.greenFg : T.indigoFg;
-  return (
-    <span
-      className="text-[0.65rem] px-2.5 py-1 rounded-full flex items-center gap-1.5 w-fit border font-medium"
-      style={{
-        backgroundColor: color + "15",
-        borderColor: color + "30",
-        color,
-      }}
-    >
-      <span
-        className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${isLive ? "animate-pulse" : ""}`}
-        style={{ backgroundColor: color }}
-      />
-      {isLive ? "Live" : "Production"}
-    </span>
-  );
-}
-
-function GhostButton({ href, children, icon }) {
-  const [hovered, setHovered] = React.useState(false);
-  return (
-    <a
-      href={href}
-      target={href.startsWith("http") ? "_blank" : undefined}
-      rel="noreferrer"
-      className="flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium border transition-all duration-200"
-      style={{
-        borderColor: hovered ? T.borderHover : T.border,
-        color: hovered ? T.text : T.muted,
-        backgroundColor: hovered ? T.cardAlt : "transparent",
-      }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      {icon}
-      {children}
-    </a>
-  );
+function Divider() {
+  return <div className="w-full h-px my-5" style={{ backgroundColor: T.border }} />;
 }
 
 /* ─────────────────────────────────────────────────────────
-   HERO CARD
+   HERO
 ───────────────────────────────────────────────────────── */
 function HeroCard() {
   return (
-    <Card className="gap-0 p-6 md:p-8 justify-between">
+    <Card className="justify-between gap-0 p-6 md:p-8">
       <div>
-        {hero.available && (
-          <div className="flex items-center gap-2 mb-6">
-            <span
-              className="w-2 h-2 rounded-full animate-pulse flex-shrink-0"
-              style={{ backgroundColor: T.green }}
-            />
-            <span className="text-xs font-medium" style={{ color: T.green }}>
-              Open to new opportunities
-            </span>
-          </div>
-        )}
         <h1
-          className="text-4xl md:text-5xl xl:text-[3.25rem] font-semibold tracking-tight leading-[1.05] mb-4"
+          className="text-4xl md:text-5xl xl:text-[3rem] font-semibold tracking-tight leading-[1.05] mb-3"
           style={{ color: T.text }}
         >
           {hero.name}
         </h1>
-        <p className="text-base md:text-lg font-light mb-5" style={{ color: T.muted }}>
+        <p
+          className="text-sm md:text-base font-light mb-6 tracking-wide"
+          style={{ color: T.sub }}
+        >
           {hero.role}
-          <span className="mx-2" style={{ color: T.faint }}>·</span>
-          <span style={{ color: T.indigoFg }}>{hero.sub}</span>
         </p>
         <p
-          className="text-sm leading-[1.85] font-light max-w-xl"
+          className="text-sm leading-[1.9] font-light max-w-xl"
           style={{ color: T.muted }}
         >
           {hero.bio}
         </p>
       </div>
 
-      <div className="flex flex-wrap items-center gap-2.5 mt-8">
-        <GhostButton href={hero.github} icon={<FiGithub size={13} />}>
-          GitHub
-        </GhostButton>
-        <GhostButton href={hero.linkedin} icon={<FiLinkedin size={13} />}>
-          LinkedIn
-        </GhostButton>
+      <div className="flex flex-wrap items-center gap-3 mt-8">
         <a
-          href={`mailto:${hero.email}`}
-          className="flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-medium transition-all duration-200"
-          style={{ backgroundColor: T.indigo, color: "#fff" }}
-          onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#4F46E5")}
-          onMouseLeave={e => (e.currentTarget.style.backgroundColor = T.indigo)}
+          href={hero.linkedin}
+          target="_blank"
+          rel="noreferrer"
+          className="flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-medium border transition-all duration-200"
+          style={{ borderColor: T.borderHover, color: T.sub }}
+          onMouseEnter={e => {
+            e.currentTarget.style.borderColor = T.muted;
+            e.currentTarget.style.color = T.text;
+          }}
+          onMouseLeave={e => {
+            e.currentTarget.style.borderColor = T.borderHover;
+            e.currentTarget.style.color = T.sub;
+          }}
         >
-          <FiMail size={13} />
-          Email Me
+          <FiLinkedin size={13} />
+          LinkedIn
         </a>
         <span
-          className="flex items-center gap-1.5 text-xs ml-1"
+          className="flex items-center gap-1.5 text-xs"
           style={{ color: T.faint }}
         >
           <FiMapPin size={11} />
@@ -194,31 +126,37 @@ function HeroCard() {
 }
 
 /* ─────────────────────────────────────────────────────────
-   CURRENT ROLE CARD
+   CURRENT ROLE
 ───────────────────────────────────────────────────────── */
 function RoleCard() {
   return (
-    <Card className="justify-between gap-4">
+    <Card className="justify-between gap-0">
       <div>
-        <Label>Currently</Label>
-        <p className="text-2xl font-semibold mb-1" style={{ color: T.text }}>
+        <SectionLabel>Current</SectionLabel>
+        <p
+          className="text-xl font-semibold leading-tight mb-1"
+          style={{ color: T.text }}
+        >
           {currentRole.company}
         </p>
-        <p className="text-sm font-medium mb-4" style={{ color: T.indigoFg }}>
+        <p
+          className="text-xs font-medium mb-5 tracking-wide"
+          style={{ color: T.sub }}
+        >
           {currentRole.title}
         </p>
-        <p className="text-xs leading-[1.8] font-light" style={{ color: T.muted }}>
+        <p
+          className="text-xs leading-[1.85] font-light"
+          style={{ color: T.muted }}
+        >
           {currentRole.description}
         </p>
       </div>
-      <div className="space-y-1.5">
-        <p className="font-mono text-xs" style={{ color: T.faint }}>
+      <div className="mt-5 space-y-1">
+        <p className="font-mono text-[0.65rem]" style={{ color: T.faint }}>
           {currentRole.period}
         </p>
-        <p
-          className="flex items-center gap-1.5 text-xs"
-          style={{ color: T.faint }}
-        >
+        <p className="flex items-center gap-1.5 text-[0.65rem]" style={{ color: T.faint }}>
           <FiMapPin size={10} />
           {hero.location}
         </p>
@@ -228,34 +166,59 @@ function RoleCard() {
 }
 
 /* ─────────────────────────────────────────────────────────
-   PROJECT CARD
+   ARCHITECTURE & R&D PROJECTS
 ───────────────────────────────────────────────────────── */
 function ProjectCard({ project }) {
   return (
-    <Card className="justify-between gap-5">
+    <Card className="justify-between gap-0">
       <div>
         <div className="flex items-start justify-between mb-5">
-          <StatusBadge status={project.status} />
-          <FiArrowUpRight size={15} style={{ color: T.faint }} />
+          <span
+            className="font-mono text-[0.58rem] uppercase tracking-[0.22em]"
+            style={{ color: T.faint }}
+          >
+            R&D
+          </span>
+          <span
+            className="font-mono text-[0.58rem] uppercase tracking-[0.15em]"
+            style={{ color: T.faint }}
+          >
+            {project.label}
+          </span>
         </div>
-        <h3 className="text-xl font-semibold mb-1" style={{ color: T.text }}>
+        <h3
+          className="text-lg font-semibold mb-1 leading-snug"
+          style={{ color: T.text }}
+        >
           {project.name}
         </h3>
         <p
-          className="text-[0.7rem] font-medium uppercase tracking-wider mb-4"
-          style={{ color: project.accent }}
+          className="text-[0.68rem] font-medium uppercase tracking-wider mb-4"
+          style={{ color: T.muted }}
         >
           {project.tagline}
         </p>
-        <p className="text-sm font-light leading-[1.8]" style={{ color: T.muted }}>
+        <p
+          className="text-xs font-light leading-[1.85]"
+          style={{ color: T.muted }}
+        >
           {project.description}
         </p>
       </div>
+      <Divider />
       <div className="flex flex-wrap gap-1.5">
         {project.tech.map((t) => (
-          <Tag key={t} accent={project.accent}>
+          <span
+            key={t}
+            className="font-mono text-[0.65rem] px-2 py-0.5 rounded border"
+            style={{
+              borderColor: T.border,
+              color: T.faint,
+              backgroundColor: T.cardAlt,
+            }}
+          >
             {t}
-          </Tag>
+          </span>
         ))}
       </div>
     </Card>
@@ -263,51 +226,48 @@ function ProjectCard({ project }) {
 }
 
 /* ─────────────────────────────────────────────────────────
-   EXPERIENCE CARD
+   EXPERIENCE
 ───────────────────────────────────────────────────────── */
 function ExperienceCard() {
   return (
     <Card>
-      <Label>Experience</Label>
-      <div className="space-y-0">
+      <SectionLabel>Experience</SectionLabel>
+      <div>
         {experience.map((item, i) => (
-          <div key={i} className="flex gap-4 items-stretch">
-            {/* Timeline connector */}
-            <div className="flex flex-col items-center flex-shrink-0 pt-1.5">
+          <div key={i} className="flex gap-4">
+            {/* Timeline */}
+            <div className="flex flex-col items-center flex-shrink-0 pt-[5px]">
               <div
                 className="w-1.5 h-1.5 rounded-full flex-shrink-0"
                 style={{
-                  backgroundColor: item.current ? T.green : T.faint,
-                  boxShadow: item.current ? `0 0 6px ${T.green}` : "none",
+                  backgroundColor: item.current ? T.sub : T.faint,
                 }}
               />
               {i < experience.length - 1 && (
                 <div
                   className="w-px flex-1 mt-1.5"
-                  style={{ backgroundColor: T.border, minHeight: "24px" }}
+                  style={{ backgroundColor: T.border, minHeight: "22px" }}
                 />
               )}
             </div>
-            {/* Content */}
-            <div className="pb-4 flex-1">
-              <p className="text-sm font-medium leading-snug" style={{ color: T.text }}>
+            {/* Text */}
+            <div className="pb-4 flex-1 min-w-0">
+              <p
+                className="text-sm font-medium leading-snug"
+                style={{ color: item.current ? T.text : T.sub }}
+              >
                 {item.company}
-                {item.note && (
-                  <span
-                    className="ml-2 text-[0.65rem] font-mono font-normal px-1.5 py-0.5 rounded"
-                    style={{
-                      backgroundColor: T.indigo + "18",
-                      color: T.indigoFg,
-                    }}
-                  >
-                    {item.note}
-                  </span>
-                )}
               </p>
-              <p className="text-xs font-light mt-0.5" style={{ color: T.muted }}>
+              <p
+                className="text-xs font-light mt-0.5"
+                style={{ color: T.muted }}
+              >
                 {item.role}
               </p>
-              <p className="font-mono text-[0.65rem] mt-0.5" style={{ color: T.faint }}>
+              <p
+                className="font-mono text-[0.62rem] mt-0.5"
+                style={{ color: T.faint }}
+              >
                 {item.period}
               </p>
             </div>
@@ -319,35 +279,37 @@ function ExperienceCard() {
 }
 
 /* ─────────────────────────────────────────────────────────
-   STACK CARD
+   COMPETENCIES
 ───────────────────────────────────────────────────────── */
-function StackCard() {
+function CompetenciesCard() {
   return (
     <Card>
-      <Label>Stack</Label>
-      <div className="space-y-4">
-        {Object.entries(techStack).map(([category, items]) => (
-          <div key={category}>
-            <p className="text-[0.65rem] font-medium mb-2" style={{ color: T.indigoFg }}>
-              {category}
-            </p>
-            <div className="flex flex-wrap gap-1.5">
-              {items.map((item) => (
-                <Tag key={item}>{item}</Tag>
-              ))}
-            </div>
-          </div>
+      <SectionLabel>Competencies</SectionLabel>
+      <ul className="space-y-2.5">
+        {competencies.map((item) => (
+          <li key={item} className="flex items-start gap-2.5">
+            <span
+              className="mt-[6px] w-1 h-1 rounded-full flex-shrink-0"
+              style={{ backgroundColor: T.faint }}
+            />
+            <span
+              className="text-xs font-light leading-snug"
+              style={{ color: T.sub }}
+            >
+              {item}
+            </span>
+          </li>
         ))}
-      </div>
+      </ul>
     </Card>
   );
 }
 
 /* ─────────────────────────────────────────────────────────
-   CONTACT CARD
+   CONTACT
 ───────────────────────────────────────────────────────── */
 function ContactCard() {
-  const [formState, setFormState] = useState("idle"); // idle | sending | sent | error
+  const [formState, setFormState] = useState("idle");
   const formRef = useRef(null);
 
   const handleSubmit = (e) => {
@@ -369,80 +331,90 @@ function ContactCard() {
 
   const inputStyle = {
     backgroundColor: T.cardAlt,
-    borderColor: T.border,
+    border: `1px solid ${T.border}`,
     color: T.text,
     width: "100%",
-    fontSize: "0.8rem",
-    padding: "0.6rem 0.75rem",
-    borderRadius: "0.5rem",
-    border: "1px solid",
+    fontSize: "0.75rem",
+    padding: "0.55rem 0.7rem",
+    borderRadius: "0.375rem",
     outline: "none",
     fontFamily: "inherit",
+    transition: "border-color 0.2s",
   };
 
   return (
-    <Card className="justify-between gap-4">
+    <Card className="justify-between gap-0">
       <div>
-        <Label>Get in Touch</Label>
-        <p className="text-xs leading-[1.8] font-light" style={{ color: T.muted }}>
-          Open to SA roles, consulting engagements, and AI/automation projects.
+        <SectionLabel>Contact</SectionLabel>
+        <p
+          className="text-xs font-light leading-[1.8] mb-5"
+          style={{ color: T.muted }}
+        >
+          Available for strategic consulting and architectural advisory engagements.
         </p>
       </div>
 
       {formState === "sent" ? (
         <div
-          className="flex-1 flex items-center justify-center rounded-xl p-4 text-center text-xs font-medium"
-          style={{ backgroundColor: T.green + "15", color: T.greenFg }}
+          className="flex-1 flex items-center justify-center rounded-lg p-4 text-center text-xs"
+          style={{ border: `1px solid ${T.border}`, color: T.sub }}
         >
-          Sent. I'll be in touch soon.
+          Message received.
         </div>
       ) : (
-        <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-2.5 flex-1">
+        <form
+          ref={formRef}
+          onSubmit={handleSubmit}
+          className="flex flex-col gap-2 flex-1"
+        >
           <input
             type="text"
             name="from_name"
             required
-            placeholder="Your name"
+            placeholder="Name"
             style={inputStyle}
-            onFocus={(e) => (e.target.style.borderColor = T.indigo)}
+            onFocus={(e) => (e.target.style.borderColor = T.muted)}
             onBlur={(e) => (e.target.style.borderColor = T.border)}
           />
           <input
             type="email"
             name="user_email"
             required
-            placeholder="your@email.com"
+            placeholder="Email"
             style={inputStyle}
-            onFocus={(e) => (e.target.style.borderColor = T.indigo)}
+            onFocus={(e) => (e.target.style.borderColor = T.muted)}
             onBlur={(e) => (e.target.style.borderColor = T.border)}
           />
           <textarea
             name="message"
             required
             rows={3}
-            placeholder="Your message..."
+            placeholder="Message"
             style={{ ...inputStyle, resize: "none" }}
-            onFocus={(e) => (e.target.style.borderColor = T.indigo)}
+            onFocus={(e) => (e.target.style.borderColor = T.muted)}
             onBlur={(e) => (e.target.style.borderColor = T.border)}
           />
           <button
             type="submit"
             disabled={formState === "sending"}
-            className="flex items-center justify-center gap-2 text-xs font-semibold py-2.5 rounded-lg transition-opacity disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
-            style={{ backgroundColor: T.indigo, color: "#fff" }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#4F46E5")}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = T.indigo)}
+            className="flex items-center justify-center gap-2 text-xs font-medium py-2 rounded-md transition-opacity disabled:opacity-40 cursor-pointer disabled:cursor-not-allowed mt-1"
+            style={{ backgroundColor: T.borderHover, color: T.sub }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = T.faint;
+              e.currentTarget.style.color = T.text;
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = T.borderHover;
+              e.currentTarget.style.color = T.sub;
+            }}
           >
-            <FiSend size={12} />
-            {formState === "sending" ? "Sending…" : "Send Message"}
+            <FiSend size={11} />
+            {formState === "sending" ? "Sending…" : "Send"}
           </button>
           {formState === "error" && (
-            <p className="text-[0.7rem] text-center" style={{ color: "#F87171" }}>
-              Something went wrong.{" "}
-              <a
-                href={`mailto:${hero.email}`}
-                style={{ color: T.indigoFg }}
-              >
+            <p className="text-[0.65rem] text-center" style={{ color: T.muted }}>
+              Could not send.{" "}
+              <a href={`mailto:${hero.email}`} style={{ color: T.sub }}>
                 Email directly
               </a>
             </p>
@@ -450,22 +422,24 @@ function ContactCard() {
         </form>
       )}
 
-      <a
-        href={`mailto:${hero.email}`}
-        className="flex items-center gap-1.5 text-[0.65rem] transition-colors"
-        style={{ color: T.faint }}
-        onMouseEnter={(e) => (e.currentTarget.style.color = T.muted)}
-        onMouseLeave={(e) => (e.currentTarget.style.color = T.faint)}
-      >
-        <FiMail size={10} />
-        {hero.email}
-      </a>
+      <div className="mt-4 pt-4" style={{ borderTop: `1px solid ${T.border}` }}>
+        <a
+          href={`mailto:${hero.email}`}
+          className="flex items-center gap-1.5 text-[0.62rem] transition-colors"
+          style={{ color: T.faint }}
+          onMouseEnter={(e) => (e.currentTarget.style.color = T.muted)}
+          onMouseLeave={(e) => (e.currentTarget.style.color = T.faint)}
+        >
+          <FiMail size={10} />
+          {hero.email}
+        </a>
+      </div>
     </Card>
   );
 }
 
 /* ─────────────────────────────────────────────────────────
-   ROOT APP — Bento Grid
+   ROOT — Bento Grid
 ───────────────────────────────────────────────────────── */
 export default function App() {
   return (
@@ -473,20 +447,23 @@ export default function App() {
       className="min-h-screen px-4 py-6 md:px-6 md:py-8"
       style={{ backgroundColor: T.bg }}
     >
-      {/* Top metadata bar */}
-      <div className="max-w-6xl mx-auto flex items-center justify-between mb-4">
-        <span className="font-mono text-xs" style={{ color: T.faint }}>
-          mrdigre
+      {/* Top bar */}
+      <div
+        className="max-w-6xl mx-auto flex items-center justify-between mb-5 pb-4"
+        style={{ borderBottom: `1px solid ${T.border}` }}
+      >
+        <span className="font-mono text-[0.65rem]" style={{ color: T.faint }}>
+          manudigregorio@gmail.com
         </span>
-        <span className="font-mono text-xs" style={{ color: T.faint }}>
-          {new Date().getFullYear()} · Senior SA Portfolio
+        <span className="font-mono text-[0.65rem]" style={{ color: T.faint }}>
+          {hero.location}
         </span>
       </div>
 
-      {/* ── Bento Grid ── */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3">
+      {/* Bento Grid */}
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2.5">
 
-        {/* Row 1: Hero (3 cols) + Role (1 col) */}
+        {/* Row 1 */}
         <div className="md:col-span-2 xl:col-span-3">
           <HeroCard />
         </div>
@@ -494,7 +471,7 @@ export default function App() {
           <RoleCard />
         </div>
 
-        {/* Row 2: Projects (2 cols each) */}
+        {/* Row 2 — R&D Projects */}
         <div className="xl:col-span-2">
           <ProjectCard project={projects[0]} />
         </div>
@@ -502,12 +479,12 @@ export default function App() {
           <ProjectCard project={projects[1]} />
         </div>
 
-        {/* Row 3: Experience (2 cols) + Stack (1 col) + Contact (1 col) */}
+        {/* Row 3 */}
         <div className="md:col-span-2 xl:col-span-2">
           <ExperienceCard />
         </div>
         <div className="xl:col-span-1">
-          <StackCard />
+          <CompetenciesCard />
         </div>
         <div className="xl:col-span-1">
           <ContactCard />
@@ -515,9 +492,12 @@ export default function App() {
       </div>
 
       {/* Footer */}
-      <div className="max-w-6xl mx-auto mt-6 flex items-center justify-center">
-        <p className="font-mono text-[0.65rem]" style={{ color: T.faint }}>
-          Built with React & Tailwind CSS
+      <div
+        className="max-w-6xl mx-auto mt-5 pt-4 flex items-center justify-center"
+        style={{ borderTop: `1px solid ${T.border}` }}
+      >
+        <p className="font-mono text-[0.58rem]" style={{ color: T.faint }}>
+          Manuel Di Gregorio · {new Date().getFullYear()}
         </p>
       </div>
     </div>
