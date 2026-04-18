@@ -1,6 +1,6 @@
 export const hero = {
   name: "Manuel Digregorio",
-  role: "Solutions Engineer · Architect · Builder · Problem Solver",
+  role: "Solutions Architect · Engineer · Builder",
   location: "Remote · Global",
   bio: "Systems thinker spanning industrial, enterprise, and commerce. I've run the factory, owned the P&L, led teams — and I write the code. That's the edge. The console below has the full story.",
   linkedin: "https://linkedin.com/in/mrdigre",
