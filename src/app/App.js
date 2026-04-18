@@ -516,7 +516,7 @@ export default function App() {
           <Card className="justify-between gap-0">
             <div>
               <div className="flex items-start justify-between mb-4">
-                <SectionLabel>Personal Project</SectionLabel>
+                <SectionLabel>Co-Founded Company</SectionLabel>
                 <span className="font-mono text-[0.65rem] uppercase" style={{ color: T.green }}>● Active</span>
               </div>
               <h3 className="text-lg font-bold mb-1 leading-snug" style={{ color: T.text }}>

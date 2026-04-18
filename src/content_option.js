@@ -1,8 +1,8 @@
 export const hero = {
   name: "Manuel Digregorio",
-  role: "Senior Solutions Architect",
-  location: "Mendoza, Argentina",
-  bio: "From managing industrial plants to architecting enterprise SaaS — I build systems that work. Started with a 386 and DOS in the early '90s, built my first website on Angelfire in '98, then took the long way through industrial engineering, energy, and business operations before coming back to what I always loved: building things with code. Today I design compliance and trust architectures at global scale. The difference? I've sat on both sides of the table — I understand the business problem as deeply as the technical solution.",
+  role: "Co-Founder · Solutions Architect · Engineer",
+  location: "Remote · Global",
+  bio: "Operator, builder, and architect. Co-Founder of Goodneys LLC — a premium e-commerce holding on Amazon US where I run brand, product, growth, and the full tech stack end-to-end. In parallel, Senior Solutions Architect at Sumsub designing trust & compliance infrastructure at global scale (LATAM / EMEA / APAC). Previously General Manager of a 250-person manufacturing company with 15 direct reports, and Territory Manager at Axion Energy. Industrial Engineer by training — started with a 386 in '92 and an Angelfire site in '98. I've run the factory, owned the P&L, led teams — and I write the code. That's the edge.",
   linkedin: "https://linkedin.com/in/mrdigre",
   email: "manudigregorio@gmail.com",
 };
@@ -22,7 +22,7 @@ export const projects = [
     label: "Co-Founder · Technical Architect",
     tagline: "E-Commerce Infrastructure + AI-Driven Operations",
     description:
-      "Co-founded a premium e-commerce holding operating brands on Amazon US. Built the full technical and operational infrastructure: internal ops dashboard, automated competitive intelligence (LLM-powered analysis of 781+ competitor reviews), PPC optimization tools, real-time profit calculators, and lead capture funnels. Currently scaling the flagship brand Kiki & Koda across multiple SKUs.",
+      "Co-founded a premium e-commerce holding operating brands on Amazon US. Owning end-to-end: brand strategy and development, product (sourcing, packaging, pricing), marketing and growth, and the full technical & operational infrastructure — internal ops dashboards, automated competitive intelligence (LLM-powered analysis of 781+ competitor reviews), PPC optimization tools, real-time profit calculators, DTC landing pages with email capture. Flagship brand: Kiki & Koda — premium biodegradable pet essentials, scaling across multiple SKUs on Amazon US and kikikoda.com.",
     tech: ["Astro", "React", "Supabase", "Vercel", "Claude API", "Resend"],
   },
 ];
@@ -85,6 +85,7 @@ export const terminalCommands = {
   help: `Available commands:
   about     — who I am
   skills    — what I bring to the table
+  impact    — numbers, scale, outcomes
   career    — the full timeline
   projects  — things I've built
   contact   — get in touch
@@ -131,6 +132,32 @@ export const terminalCommands = {
   ├── Supabase · PostgreSQL · REST/GraphQL
   ├── Vercel · AWS · Docker
   └── Claude API · AI SDK · Python`,
+
+  impact: `> Impact & Scale
+
+  COMPANIES BUILT
+  ├── Goodneys LLC — Co-Founder since 2015
+  │   Brand, product, ops and full tech stack from scratch
+  │   Flagship: Kiki & Koda (Amazon US + kikikoda.com)
+  └── Multiple DTC brand launches and iterations
+
+  TEAMS & P&L
+  ├── Envases Los Andes — General Manager
+  │   250-person company · 15 direct reports
+  │   Full administrative team under my lead
+  ├── Axion Energy — Territory Manager
+  │   Commercial territory P&L across Argentina
+  └── Sumsub — Senior SA Implementations
+      Enterprise deals across LATAM / EMEA / APAC
+
+  TECH AT SCALE
+  ├── Trust & compliance infra for global clients (Sumsub)
+  ├── AI-powered ops: LLM pipelines, agent workflows
+  ├── End-to-end systems: React · Node · Python · Supabase
+  └── 781+ competitor reviews analyzed via LLM for Kiki & Koda
+
+  The edge: I've done all three.
+  Very few people can say that.`,
 
   origin: `> The Origin Story
 
