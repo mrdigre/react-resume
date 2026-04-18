@@ -35,91 +35,89 @@ const T = {
   termAmber: "#D4B64E",
 };
 
-/* ── Pixel Croc Mascot (3/4 profile, big grin, feminine) ── */
+/* ── Pixel Croc Mascot (side profile, pixel-art, with wink) ── */
 function PixelMascot() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 80 52"
-      width="56"
-      height="36"
+      viewBox="0 0 76 40"
+      width="64"
+      height="34"
       style={{ imageRendering: "pixelated" }}
     >
       <style>{`
-        .croc-eye-r {
-          transform-origin: 28px 14px;
-          animation: eyeWink 5s ease-in-out infinite;
+        .croc-eye {
+          transform-origin: 13px 17px;
+          animation: eyeWink 4.5s ease-in-out infinite;
         }
         @keyframes eyeWink {
-          0%, 75%, 100% { transform: scaleY(1); }
-          80%, 90% { transform: scaleY(0.08); }
-        }
-        .croc-lash-r {
-          animation: lashWink 5s ease-in-out infinite;
-        }
-        @keyframes lashWink {
-          0%, 75%, 100% { opacity: 1; }
-          80%, 90% { opacity: 0; }
+          0%, 82%, 100% { transform: scaleY(1); }
+          87%, 93%      { transform: scaleY(0.08); }
         }
       `}</style>
-      {/* Head spikes (back of head) */}
-      <rect x="4" y="2" width="4" height="6" fill="#1a7a2e" />
-      <rect x="10" y="0" width="4" height="6" fill="#1a7a2e" />
-      <rect x="16" y="2" width="4" height="5" fill="#1a7a2e" />
-      {/* Eye bumps on top */}
-      <rect x="20" y="2" width="12" height="4" fill="#3aaa50" />
-      <rect x="34" y="4" width="8" height="3" fill="#3aaa50" />
-      {/* Eyelashes — left (top of left eye bump) */}
-      <rect x="22" y="0" width="2" height="3" fill="#1a6a28" />
-      <rect x="26" y="0" width="2" height="2" fill="#1a6a28" />
-      {/* Eyelashes — right (wink) */}
-      <g className="croc-lash-r">
-        <rect x="36" y="2" width="2" height="3" fill="#1a6a28" />
-        <rect x="40" y="1" width="2" height="2" fill="#1a6a28" />
+
+      {/* Tail — curves up at the right end */}
+      <rect x="54" y="14" width="10" height="6" fill="#5cc55c" />
+      <rect x="58" y="10" width="8"  height="4" fill="#5cc55c" />
+      <rect x="60" y="6"  width="6"  height="4" fill="#5cc55c" />
+      <rect x="62" y="3"  width="4"  height="3" fill="#5cc55c" />
+      {/* Tail darker back edge */}
+      <rect x="56" y="14" width="8"  height="2" fill="#2d8a3e" />
+      <rect x="60" y="10" width="6"  height="2" fill="#2d8a3e" />
+      <rect x="62" y="6"  width="4"  height="2" fill="#2d8a3e" />
+
+      {/* Back spikes (triangular bumps along top) */}
+      <rect x="14" y="10" width="2" height="2" fill="#2d8a3e" />
+      <rect x="12" y="12" width="6" height="2" fill="#2d8a3e" />
+      <rect x="22" y="10" width="2" height="2" fill="#2d8a3e" />
+      <rect x="20" y="12" width="6" height="2" fill="#2d8a3e" />
+      <rect x="30" y="10" width="2" height="2" fill="#2d8a3e" />
+      <rect x="28" y="12" width="6" height="2" fill="#2d8a3e" />
+      <rect x="38" y="10" width="2" height="2" fill="#2d8a3e" />
+      <rect x="36" y="12" width="6" height="2" fill="#2d8a3e" />
+      <rect x="46" y="10" width="2" height="2" fill="#2d8a3e" />
+      <rect x="44" y="12" width="6" height="2" fill="#2d8a3e" />
+
+      {/* Head block (left) */}
+      <rect x="4"  y="12" width="18" height="12" fill="#5cc55c" />
+      <rect x="2"  y="14" width="22" height="10" fill="#5cc55c" />
+      <rect x="0"  y="16" width="24" height="6"  fill="#5cc55c" />
+
+      {/* Body */}
+      <rect x="12" y="14" width="44" height="12" fill="#5cc55c" />
+
+      {/* Yellow underbelly + lower jaw */}
+      <rect x="4"  y="22" width="18" height="2" fill="#e8c542" />
+      <rect x="12" y="24" width="44" height="4" fill="#e8c542" />
+
+      {/* Mouth line */}
+      <rect x="0"  y="20" width="24" height="2" fill="#2d8a3e" />
+
+      {/* Teeth peeking from jaw */}
+      <rect x="4"  y="20" width="2"  height="2" fill="#ffffff" />
+      <rect x="10" y="20" width="2"  height="2" fill="#ffffff" />
+      <rect x="16" y="20" width="2"  height="2" fill="#ffffff" />
+
+      {/* Eye — winks */}
+      <g className="croc-eye">
+        <rect x="10" y="14" width="6" height="6" fill="#ffffff" />
+        <rect x="12" y="16" width="3" height="3" fill="#1a1a1a" />
+        <rect x="13" y="16" width="1" height="1" fill="#ffffff" />
       </g>
-      {/* Head */}
-      <rect x="2" y="7" width="48" height="4" fill="#3aaa50" />
-      <rect x="0" y="11" width="54" height="4" fill="#3aaa50" />
-      <rect x="0" y="15" width="60" height="4" fill="#3aaa50" />
-      {/* Snout extending right */}
-      <rect x="0" y="19" width="68" height="4" fill="#3aaa50" />
-      <rect x="0" y="23" width="74" height="4" fill="#3aaa50" />
+
       {/* Nostril */}
-      <rect x="68" y="20" width="3" height="3" fill="#1a7a2e" />
-      {/* Left eye — stays open */}
-      <rect x="20" y="7" width="10" height="10" fill="#f0f0d8" />
-      <rect x="24" y="10" width="4" height="4" fill="#222" />
-      <rect x="25" y="11" width="2" height="2" fill="#555" />
-      {/* Right eye — winks */}
-      <g className="croc-eye-r">
-        <rect x="34" y="7" width="10" height="10" fill="#f0f0d8" />
-        <rect x="38" y="10" width="4" height="4" fill="#222" />
-        <rect x="39" y="11" width="2" height="2" fill="#555" />
-      </g>
-      {/* Brow ridge */}
-      <rect x="18" y="6" width="28" height="2" fill="#2d8a3e" />
-      {/* Blush */}
-      <rect x="16" y="19" width="4" height="2" fill="#e08070" opacity="0.35" />
-      {/* BIG GRIN — teeth showing */}
-      <rect x="44" y="27" width="4" height="4" fill="#fff" />
-      <rect x="50" y="27" width="4" height="4" fill="#fff" />
-      <rect x="56" y="27" width="4" height="4" fill="#fff" />
-      <rect x="62" y="27" width="4" height="3" fill="#fff" />
-      {/* Lower jaw */}
-      <rect x="4" y="27" width="70" height="4" fill="#2d8a3e" />
-      <rect x="40" y="31" width="30" height="3" fill="#2d8a3e" />
-      {/* Mouth interior (behind teeth) */}
-      <rect x="44" y="24" width="24" height="3" fill="#b03030" />
-      {/* Smile line curving up */}
-      <rect x="40" y="24" width="4" height="3" fill="#1a7a2e" />
-      <rect x="68" y="23" width="4" height="2" fill="#1a7a2e" />
-      {/* Chin / throat */}
-      <rect x="8" y="31" width="32" height="4" fill="#2d8a3e" />
-      <rect x="12" y="35" width="24" height="4" fill="#2d8a3e" />
-      {/* Scale texture marks */}
-      <rect x="6" y="13" width="3" height="2" fill="#2d8a3e" />
-      <rect x="10" y="17" width="3" height="2" fill="#2d8a3e" />
-      <rect x="4" y="21" width="3" height="2" fill="#2d8a3e" />
+      <rect x="2"  y="17" width="2" height="1" fill="#2d8a3e" />
+
+      {/* Legs */}
+      <rect x="14" y="26" width="4" height="4" fill="#5cc55c" />
+      <rect x="22" y="26" width="4" height="4" fill="#5cc55c" />
+      <rect x="40" y="26" width="4" height="4" fill="#5cc55c" />
+      <rect x="48" y="26" width="4" height="4" fill="#5cc55c" />
+      {/* Feet (darker) */}
+      <rect x="14" y="30" width="4" height="2" fill="#2d8a3e" />
+      <rect x="22" y="30" width="4" height="2" fill="#2d8a3e" />
+      <rect x="40" y="30" width="4" height="2" fill="#2d8a3e" />
+      <rect x="48" y="30" width="4" height="2" fill="#2d8a3e" />
     </svg>
   );
 }
