@@ -9,10 +9,10 @@ export const hero = {
 
 export const currentRole = {
   company: "Sumsub",
-  title: "Senior SA — Implementations",
-  period: "Jan 2026 — Present",
+  title: "Solutions Architect",
+  period: "Apr 2025 — Present",
   description:
-    "Designing trust and compliance architectures at global scale. Leading end-to-end KYC/AML implementation cycles for enterprise clients across LATAM, EMEA, and APAC — from technical scoping to production deployment.",
+    "Designing and implementing KYC, KYB, and AML solutions for enterprise clients. Architecting seamless API integrations, SDK workflows, and compliance frameworks to enhance identity verification, fraud detection, and regulatory adherence at global scale.",
 };
 
 export const projects = [
@@ -30,8 +30,8 @@ export const projects = [
 export const experience = [
   {
     company: "Sumsub",
-    role: "Senior SA — Implementations",
-    period: "2026 — Present",
+    role: "Solutions Architect",
+    period: "2025 — Present",
     current: true,
     chapter: "tech",
   },
@@ -50,7 +50,7 @@ export const experience = [
   },
   {
     company: "Mercap",
-    role: "Software Developer",
+    role: "React.js Developer",
     period: "2022 — 2023",
     chapter: "tech",
   },
@@ -63,13 +63,13 @@ export const experience = [
   },
   {
     company: "Envases Los Andes",
-    role: "General Manager",
+    role: "Engineering Manager",
     period: "2020 — 2022",
     chapter: "business",
   },
   {
     company: "Axion Energy",
-    role: "Territory Manager",
+    role: "Sales Engineer",
     period: "2015 — 2020",
     chapter: "business",
   },
@@ -104,7 +104,7 @@ export const terminalCommands = {
   Whether it's a supply chain or a microservice mesh,
   I design systems that work under pressure.
 
-  Currently: Senior SA at Sumsub — building trust
+  Currently: Solutions Architect at Sumsub — building trust
   and compliance infrastructure at global scale.`,
 
   skills: `> Core Competencies
@@ -142,12 +142,12 @@ export const terminalCommands = {
   └── Multiple DTC brand launches and iterations
 
   TEAMS & P&L
-  ├── Envases Los Andes — General Manager
+  ├── Envases Los Andes — Engineering Manager
   │   250-person company · 15 direct reports
   │   Full administrative team under my lead
-  ├── Axion Energy — Territory Manager
-  │   Commercial territory P&L across Argentina
-  └── Sumsub — Senior SA Implementations
+  ├── Axion Energy — Sales Engineer
+  │   B2B commercial territory across Mendoza
+  └── Sumsub — Solutions Architect
       Enterprise deals across LATAM / EMEA / APAC
 
   TECH AT SCALE
