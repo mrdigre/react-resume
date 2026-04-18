@@ -1,5 +1,5 @@
 export const hero = {
-  name: "Manuel Di Gregorio",
+  name: "Manuel Digregorio",
   role: "Senior Solutions Architect",
   location: "Mendoza, Argentina",
   bio: "From managing industrial plants to architecting enterprise SaaS — I build systems that work. Started with a 386 and DOS in the early '90s, built my first website on Angelfire in '98, then took the long way through industrial engineering, energy, and business operations before coming back to what I always loved: building things with code. Today I design compliance and trust architectures at global scale. The difference? I've sat on both sides of the table — I understand the business problem as deeply as the technical solution.",
@@ -91,7 +91,7 @@ export const terminalCommands = {
   origin    — the 386 story
   clear     — clear terminal`,
 
-  about: `> Manuel Di Gregorio
+  about: `> Manuel Digregorio
   Industrial Engineer turned Solutions Architect.
   Based in Mendoza, Argentina.
 

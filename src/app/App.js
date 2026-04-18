@@ -41,8 +41,8 @@ function PixelMascot() {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 76 40"
-      width="64"
-      height="34"
+      width="104"
+      height="55"
       style={{ imageRendering: "pixelated" }}
     >
       <style>{`
@@ -552,7 +552,7 @@ export default function App() {
       <div className="max-w-5xl mx-auto mt-8 pt-5 flex items-center justify-center"
         style={{ borderTop: `1px solid ${T.border}` }}>
         <p className="font-mono text-xs" style={{ color: T.faint }}>
-          Manuel Di Gregorio · {new Date().getFullYear()}
+          Manuel Digregorio · {new Date().getFullYear()}
         </p>
       </div>
     </div>
