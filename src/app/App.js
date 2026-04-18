@@ -35,89 +35,28 @@ const T = {
   termAmber: "#D4B64E",
 };
 
-/* ── Pixel Croc Mascot (side profile, pixel-art, with wink) ── */
+/* ── MD Monogram (matches Goodneys G-logo aesthetic) ── */
 function PixelMascot() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 76 40"
-      width="104"
-      height="55"
-      style={{ imageRendering: "pixelated" }}
+      viewBox="0 0 100 100"
+      width="72"
+      height="72"
     >
-      <style>{`
-        .croc-eye {
-          transform-origin: 13px 17px;
-          animation: eyeWink 4.5s ease-in-out infinite;
-        }
-        @keyframes eyeWink {
-          0%, 82%, 100% { transform: scaleY(1); }
-          87%, 93%      { transform: scaleY(0.08); }
-        }
-      `}</style>
-
-      {/* Tail — curves up at the right end */}
-      <rect x="54" y="14" width="10" height="6" fill="#5cc55c" />
-      <rect x="58" y="10" width="8"  height="4" fill="#5cc55c" />
-      <rect x="60" y="6"  width="6"  height="4" fill="#5cc55c" />
-      <rect x="62" y="3"  width="4"  height="3" fill="#5cc55c" />
-      {/* Tail darker back edge */}
-      <rect x="56" y="14" width="8"  height="2" fill="#2d8a3e" />
-      <rect x="60" y="10" width="6"  height="2" fill="#2d8a3e" />
-      <rect x="62" y="6"  width="4"  height="2" fill="#2d8a3e" />
-
-      {/* Back spikes (triangular bumps along top) */}
-      <rect x="14" y="10" width="2" height="2" fill="#2d8a3e" />
-      <rect x="12" y="12" width="6" height="2" fill="#2d8a3e" />
-      <rect x="22" y="10" width="2" height="2" fill="#2d8a3e" />
-      <rect x="20" y="12" width="6" height="2" fill="#2d8a3e" />
-      <rect x="30" y="10" width="2" height="2" fill="#2d8a3e" />
-      <rect x="28" y="12" width="6" height="2" fill="#2d8a3e" />
-      <rect x="38" y="10" width="2" height="2" fill="#2d8a3e" />
-      <rect x="36" y="12" width="6" height="2" fill="#2d8a3e" />
-      <rect x="46" y="10" width="2" height="2" fill="#2d8a3e" />
-      <rect x="44" y="12" width="6" height="2" fill="#2d8a3e" />
-
-      {/* Head block (left) */}
-      <rect x="4"  y="12" width="18" height="12" fill="#5cc55c" />
-      <rect x="2"  y="14" width="22" height="10" fill="#5cc55c" />
-      <rect x="0"  y="16" width="24" height="6"  fill="#5cc55c" />
-
-      {/* Body */}
-      <rect x="12" y="14" width="44" height="12" fill="#5cc55c" />
-
-      {/* Yellow underbelly + lower jaw */}
-      <rect x="4"  y="22" width="18" height="2" fill="#e8c542" />
-      <rect x="12" y="24" width="44" height="4" fill="#e8c542" />
-
-      {/* Mouth line */}
-      <rect x="0"  y="20" width="24" height="2" fill="#2d8a3e" />
-
-      {/* Teeth peeking from jaw */}
-      <rect x="4"  y="20" width="2"  height="2" fill="#ffffff" />
-      <rect x="10" y="20" width="2"  height="2" fill="#ffffff" />
-      <rect x="16" y="20" width="2"  height="2" fill="#ffffff" />
-
-      {/* Eye — winks */}
-      <g className="croc-eye">
-        <rect x="10" y="14" width="6" height="6" fill="#ffffff" />
-        <rect x="12" y="16" width="3" height="3" fill="#1a1a1a" />
-        <rect x="13" y="16" width="1" height="1" fill="#ffffff" />
-      </g>
-
-      {/* Nostril */}
-      <rect x="2"  y="17" width="2" height="1" fill="#2d8a3e" />
-
-      {/* Legs */}
-      <rect x="14" y="26" width="4" height="4" fill="#5cc55c" />
-      <rect x="22" y="26" width="4" height="4" fill="#5cc55c" />
-      <rect x="40" y="26" width="4" height="4" fill="#5cc55c" />
-      <rect x="48" y="26" width="4" height="4" fill="#5cc55c" />
-      {/* Feet (darker) */}
-      <rect x="14" y="30" width="4" height="2" fill="#2d8a3e" />
-      <rect x="22" y="30" width="4" height="2" fill="#2d8a3e" />
-      <rect x="40" y="30" width="4" height="2" fill="#2d8a3e" />
-      <rect x="48" y="30" width="4" height="2" fill="#2d8a3e" />
+      <rect width="100" height="100" rx="14" fill="#1A1A1A" />
+      <text
+        x="50"
+        y="68"
+        fontFamily="Georgia, serif"
+        fontSize="48"
+        fontWeight="700"
+        textAnchor="middle"
+        fill="#D4B64E"
+        letterSpacing="-2"
+      >
+        MD
+      </text>
     </svg>
   );
 }
