@@ -35,28 +35,49 @@ const T = {
   termAmber: "#D4B64E",
 };
 
-/* ── MD Monogram (matches Goodneys G-logo aesthetic) ── */
+/* ── Pixel Croc (same as Goodneys dashboard InternalHeader) ── */
 function PixelMascot() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 100 100"
-      width="72"
-      height="72"
+      viewBox="0 0 80 55"
+      width="96"
+      height="66"
+      style={{ imageRendering: "pixelated" }}
     >
-      <rect width="100" height="100" rx="14" fill="#1A1A1A" />
-      <text
-        x="50"
-        y="68"
-        fontFamily="Georgia, serif"
-        fontSize="48"
-        fontWeight="700"
-        textAnchor="middle"
-        fill="#D4B64E"
-        letterSpacing="-2"
-      >
-        MD
-      </text>
+      <style>{`
+        @keyframes gd-croc-wink {
+          0%, 75%, 100% { transform: scaleY(1); }
+          80%, 90%      { transform: scaleY(0.08); }
+        }
+        @keyframes gd-croc-lash-wink {
+          0%, 75%, 100% { opacity: 1; }
+          80%, 90%      { opacity: 0; }
+        }
+        .gd-croc-eye  { transform-origin: 21px 18px; animation: gd-croc-wink 5s ease-in-out infinite; }
+        .gd-croc-lash { animation: gd-croc-lash-wink 5s ease-in-out infinite; }
+      `}</style>
+      <g className="gd-croc-lash">
+        <rect x="10" y="0" width="4" height="7" fill="#111" />
+        <rect x="17" y="0" width="4" height="5" fill="#111" />
+        <rect x="24" y="0" width="4" height="8" fill="#111" />
+      </g>
+      <rect x="5"  y="8"  width="40" height="5" fill="#3a8c3e" />
+      <rect x="0"  y="13" width="55" height="5" fill="#3a8c3e" />
+      <rect x="0"  y="18" width="62" height="5" fill="#3a8c3e" />
+      <rect x="0"  y="23" width="70" height="5" fill="#3a8c3e" />
+      <rect x="0"  y="28" width="75" height="5" fill="#3a8c3e" />
+      <rect x="50" y="28" width="5"  height="5" fill="#1a3d1c" />
+      <rect x="60" y="28" width="5"  height="5" fill="#1a3d1c" />
+      <rect x="0"  y="33" width="78" height="5" fill="#3a8c3e" />
+      <rect x="0"  y="38" width="75" height="5" fill="#27622a" />
+      <rect x="5"  y="43" width="65" height="5" fill="#27622a" />
+      <rect x="15" y="48" width="45" height="5" fill="#27622a" />
+      <g className="gd-croc-eye">
+        <rect x="12" y="13" width="18" height="15" fill="#e8e8d8" />
+        <rect x="18" y="16" width="7"  height="7"  fill="#111" />
+        <rect x="20" y="17" width="2"  height="2"  fill="#444" />
+      </g>
     </svg>
   );
 }

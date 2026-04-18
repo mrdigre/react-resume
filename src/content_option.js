@@ -2,7 +2,7 @@ export const hero = {
   name: "Manuel Digregorio",
   role: "Solutions Engineer · Architect · Builder · Problem Solver",
   location: "Remote · Global",
-  bio: "Engineer, architect, builder, problem solver. Senior Solutions Architect at Sumsub designing trust & compliance infrastructure at global scale (LATAM / EMEA / APAC). In parallel, Co-Founder of Goodneys LLC — a premium e-commerce holding on Amazon US where I run brand, product, growth, and the full tech stack end-to-end. Previously General Manager of a 250-person manufacturing company with 15 direct reports, and Territory Manager at Axion Energy. Industrial Engineer by training — started with a 386 in '92 and an Angelfire site in '98. I've run the factory, owned the P&L, led teams — and I write the code. That's the edge.",
+  bio: "Systems thinker spanning industrial, enterprise, and commerce. I've run the factory, owned the P&L, led teams — and I write the code. That's the edge. The console below has the full story.",
   linkedin: "https://linkedin.com/in/mrdigre",
   email: "manudigregorio@gmail.com",
 };
