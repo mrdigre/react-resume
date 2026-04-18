@@ -41,8 +41,7 @@ function PixelMascot() {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 80 55"
-      width="96"
-      height="66"
+      className="w-16 sm:w-24 h-auto flex-shrink-0"
       style={{ imageRendering: "pixelated" }}
     >
       <style>{`
@@ -229,7 +228,7 @@ ${bizJobs.map((e) => `  ${e.current ? "●" : "○"} ${e.period.padEnd(18)} ${e.
 
 /* ── Quick Command Buttons ──────────────────────────────── */
 function QuickCommands() {
-  const cmds = ["about", "skills", "career", "projects", "origin", "contact"];
+  const cmds = ["about", "skills", "impact", "career", "projects", "origin", "contact"];
   return (
     <div className="flex flex-wrap gap-2">
       {cmds.map((cmd) => (
@@ -404,16 +403,16 @@ export default function App() {
   return (
     <div className="min-h-screen px-4 py-8 md:px-8 md:py-10" style={{ backgroundColor: T.bg }}>
       {/* Top bar */}
-      <div className="max-w-5xl mx-auto flex items-center justify-between mb-8 pb-5"
+      <div className="max-w-5xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8 pb-5"
         style={{ borderBottom: `1px solid ${T.border}` }}>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 sm:gap-4 min-w-0">
           <PixelMascot />
-          <div>
-            <h1 className="text-xl font-bold" style={{ color: T.text }}>{hero.name}</h1>
-            <p className="text-sm mt-0.5" style={{ color: T.muted }}>{hero.role}</p>
+          <div className="min-w-0">
+            <h1 className="text-lg sm:text-xl font-bold leading-tight" style={{ color: T.text }}>{hero.name}</h1>
+            <p className="text-xs sm:text-sm mt-0.5 leading-snug" style={{ color: T.muted }}>{hero.role}</p>
           </div>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 sm:gap-4 flex-wrap">
           <a href={hero.linkedin} target="_blank" rel="noreferrer"
             className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg border transition-all"
             style={{ borderColor: T.border, color: T.sub }}
