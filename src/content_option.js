@@ -17,12 +17,12 @@ export const currentRole = {
 
 export const projects = [
   {
-    id: "kiki",
-    name: "Kiki & Koda",
-    label: "Founder · Technical Architect",
-    tagline: "E-Commerce + AI-Driven Operations",
+    id: "goodneys",
+    name: "Goodneys LLC",
+    label: "Co-Founder · Technical Architect",
+    tagline: "E-Commerce Infrastructure + AI-Driven Operations",
     description:
-      "Founded a premium e-commerce brand on Amazon US. Built the entire technical and operational infrastructure: from QR attribution funnels and automated email sequences to an internal ops dashboard with real-time competitive intelligence. Used LLM-powered analysis of 781+ competitor reviews to define product positioning, pricing strategy, and listing copy.",
+      "Co-founded a premium e-commerce holding operating brands on Amazon US. Built the full technical and operational infrastructure: internal ops dashboard, automated competitive intelligence (LLM-powered analysis of 781+ competitor reviews), PPC optimization tools, real-time profit calculators, and lead capture funnels. Currently scaling the flagship brand Kiki & Koda across multiple SKUs.",
     tech: ["Astro", "React", "Supabase", "Vercel", "Claude API", "Resend"],
   },
 ];
