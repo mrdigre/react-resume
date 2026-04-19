@@ -22,7 +22,7 @@ export const projects = [
     label: "Co-Founder · Technical Architect",
     tagline: "E-Commerce Infrastructure + AI-Driven Operations",
     description:
-      "Co-founded a premium e-commerce holding operating brands on Amazon US. Owning end-to-end: brand strategy and development, product (sourcing, packaging, pricing), marketing and growth, and the full technical & operational infrastructure — internal ops dashboards, automated competitive intelligence (LLM-powered analysis of 781+ competitor reviews), PPC optimization tools, real-time profit calculators, DTC landing pages with email capture. Flagship brand: Kiki & Koda — premium biodegradable pet essentials, scaling across multiple SKUs on Amazon US and kikikoda.com.",
+      "Premium e-commerce holding on Amazon US. End-to-end ownership: brand, product, growth, and the full tech & ops stack — internal dashboards, LLM-powered competitive intelligence, PPC tools, DTC landings. Flagship: Kiki & Koda — premium biodegradable pet essentials.",
     tech: ["Astro", "React", "Supabase", "Vercel", "Claude API", "Resend"],
   },
 ];
@@ -93,7 +93,7 @@ export const terminalCommands = {
   clear     — clear terminal`,
 
   about: `> Manuel Digregorio
-  Industrial Engineer turned Solutions Architect.
+  Industrial Engineer · Solutions Architect.
   Based in Mendoza, Argentina.
 
   I've managed factories, run commercial territories,
@@ -111,7 +111,7 @@ export const terminalCommands = {
 
   ARCHITECTURE
   ├── Systems Design & Integration
-  ├── KYC/AML & Trust Infrastructure
+  ├── KYC/KYB/AML & Compliance Infrastructure
   ├── SaaS Strategy & Pre-Sales
   └── Technical Program Management
 
@@ -145,23 +145,29 @@ export const terminalCommands = {
   ├── Envases Los Andes — Engineering Manager
   │   250-person company · 15 direct reports
   │   Full administrative team under my lead
-  ├── Axion Energy — Sales Engineer
-  │   B2B commercial territory across Mendoza
-  └── Sumsub — Solutions Architect
-      Enterprise deals across LATAM / EMEA / APAC
+  └── Axion Energy — Sales & Engineering
+      Led Esso → Axion rebranding across Mendoza,
+      San Juan, San Luis and Neuquén: contract
+      negotiation + engineering works supervision
+      + B2B commercial territory
 
   TECH AT SCALE
-  ├── Trust & compliance infra for global clients (Sumsub)
+  ├── Sumsub — Solutions Architect
+  │   Compliance infrastructure across the Americas
+  │   (LATAM + US + Canada enterprise accounts)
   ├── AI-powered ops: LLM pipelines, agent workflows
   ├── End-to-end systems: React · Node · Python · Supabase
-  └── 781+ competitor reviews analyzed via LLM for Kiki & Koda
+  └── LLM-powered competitive intelligence:
+      thousands of competitor reviews analyzed for Kiki & Koda
 
-  The edge: I've done all three.
-  Very few people can say that.`,
+  Full stack — the real kind.
+  From P&L to pull request.
+  From factory floor to cloud.
+  Every layer, owned first-hand.`,
 
   origin: `> The Origin Story
 
-  1992 — First computer: a 386.
+  1992 — First computer: an IBM 386.
          DOS prompt. Diskettes. Prince of Persia.
          Barbarian. Grand Prix. The magic of commands.
 
@@ -184,16 +190,15 @@ export const terminalCommands = {
   It was the training ground that makes me
   different from every other SA in the room.
 
-  I've run the factory. I've managed the team.
-  I've owned the P&L. AND I write the code.`,
+  Now, I build the systems I used to manage.`,
 
   contact: `> Get in touch
 
   Email:    manudigregorio@gmail.com
   LinkedIn: linkedin.com/in/mrdigre
 
-  I write about systems, architecture,
-  and building things. Say hi.`,
+  Got a problem worth solving?
+  Drop a line — always open to good conversations.`,
 };
 
 export const contactConfig = {
