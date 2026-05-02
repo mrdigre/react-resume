@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mrdigreg.vercel.app/sitemap.xml
+Sitemap: https://mrdigre.vercel.app/sitemap.xml
