@@ -145,7 +145,9 @@ function Terminal() {
   }, [history]);
 
   const processCommand = useCallback((cmd) => {
-    const trimmed = cmd.trim().toLowerCase();
+    // Accept both "origin" and "/origin" — strip leading slash for consistency
+    // with the visual prefix in the Quick Commands buttons.
+    const trimmed = cmd.trim().toLowerCase().replace(/^\/+/, "");
 
     if (trimmed === "clear") {
       setHistory([{ type: "system", text: "Terminal cleared." }]);
@@ -475,23 +477,10 @@ export default function App() {
       </div>
 
       <div className="max-w-5xl mx-auto">
-        {/* Hero — display typographic */}
-        <div className="mb-10 max-w-4xl">
-          <p className="font-mono text-[0.7rem] uppercase tracking-[0.28em] mb-6"
-            style={{ color: T.faint }}>
-            Solutions Architect · Engineer · Builder
-          </p>
-          <h2 className="text-[2.6rem] sm:text-[3.4rem] md:text-[4rem] font-semibold tracking-[-0.025em] leading-[1.02]"
-            style={{ color: T.text }}>
-            <span className="block">I run the factory.</span>
-            <span className="block">I own the P&amp;L.</span>
-            <span className="block">I write the code.</span>
-          </h2>
-          <p className="text-base sm:text-lg leading-[1.8] mt-7 max-w-2xl" style={{ color: T.sub }}>
-            Systems thinker spanning industrial, enterprise, and commerce. That's the edge.
-            <span className="block mt-1.5" style={{ color: T.muted }}>
-              The console below has the full story — try <span style={{ color: T.amber, fontFamily: "monospace" }}>/origin</span>.
-            </span>
+        {/* Hero — bio + CTA */}
+        <div className="mb-10 max-w-3xl">
+          <p className="text-base sm:text-lg leading-[1.85]" style={{ color: T.sub }}>
+            {hero.bio}
           </p>
           <div className="mt-7 flex items-center gap-4 flex-wrap">
             <a href="#talk"
