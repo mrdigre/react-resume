@@ -10,8 +10,8 @@
   }
 
   body {
-    background-color: #070708;
-    color: #F2F2F5;
+    background-color: #FAFAFA;
+    color: #1A1A1A;
     font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -20,8 +20,8 @@
   }
 
   ::selection {
-    background-color: rgba(99, 102, 241, 0.2);
-    color: #818CF8;
+    background-color: rgba(184,146,42,0.18);
+    color: #1A1A1A;
   }
 
   ::-webkit-scrollbar {
@@ -29,16 +29,16 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: #070708;
+    background: #FAFAFA;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #2A2A35;
+    background: #D0D0D0;
     border-radius: 2px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #3D3D50;
+    background: #888;
   }
 
   * {

@@ -113,7 +113,9 @@ function PixelMascot() {
 /* ── Terminal Component ─────────────────────────────────── */
 function Terminal() {
   const [history, setHistory] = useState([
-    { type: "system", text: "Welcome. Type 'help' or use the quick commands." },
+    { type: "system", text: "Welcome. Type 'help' for commands, or click below to explore." },
+    { type: "input", text: "about" },
+    { type: "output", text: terminalCommands.about },
   ]);
   const [input, setInput] = useState("");
   const scrollRef = useRef(null);
@@ -473,10 +475,42 @@ export default function App() {
       </div>
 
       <div className="max-w-5xl mx-auto">
-        {/* Bio */}
-        <p className="text-base leading-[1.9] mb-8 max-w-3xl" style={{ color: T.sub }}>
-          {hero.bio}
-        </p>
+        {/* Hero — display typographic */}
+        <div className="mb-10 max-w-4xl">
+          <p className="font-mono text-[0.7rem] uppercase tracking-[0.28em] mb-6"
+            style={{ color: T.faint }}>
+            Solutions Architect · Engineer · Builder
+          </p>
+          <h2 className="text-[2.6rem] sm:text-[3.4rem] md:text-[4rem] font-semibold tracking-[-0.025em] leading-[1.02]"
+            style={{ color: T.text }}>
+            <span className="block">I run the factory.</span>
+            <span className="block">I own the P&amp;L.</span>
+            <span className="block">I write the code.</span>
+          </h2>
+          <p className="text-base sm:text-lg leading-[1.8] mt-7 max-w-2xl" style={{ color: T.sub }}>
+            Systems thinker spanning industrial, enterprise, and commerce. That's the edge.
+            <span className="block mt-1.5" style={{ color: T.muted }}>
+              The console below has the full story — try <span style={{ color: T.amber, fontFamily: "monospace" }}>/origin</span>.
+            </span>
+          </p>
+          <div className="mt-7 flex items-center gap-4 flex-wrap">
+            <a href="#talk"
+              className="inline-flex items-center gap-2 text-sm font-medium px-5 py-3 rounded-lg transition-all"
+              style={{ backgroundColor: T.text, color: T.card }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = T.amber)}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = T.text)}>
+              Let's talk
+              <span aria-hidden="true">→</span>
+            </a>
+            <a href={hero.linkedin} target="_blank" rel="noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm transition-colors"
+              style={{ color: T.muted }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = T.text)}
+              onMouseLeave={(e) => (e.currentTarget.style.color = T.muted)}>
+              <FiLinkedin size={14} /> LinkedIn
+            </a>
+          </div>
+        </div>
 
         {/* Terminal + Quick Commands */}
         <div className="grid grid-cols-1 xl:grid-cols-4 gap-4 mb-4">
@@ -546,7 +580,9 @@ export default function App() {
           <ExperienceCard />
 
           {/* Contact */}
-          <ContactCard />
+          <div id="talk" style={{ scrollMarginTop: "24px" }}>
+            <ContactCard />
+          </div>
         </div>
       </div>
 
