@@ -2,7 +2,7 @@ export const hero = {
   name: "Manuel Digregorio",
   role: "Solutions Architect · Engineer · Builder",
   location: "Remote · Global",
-  bio: "Systems thinker spanning industrial, enterprise, and commerce. I've run the factory, owned the P&L, led teams — and I write the code. That's the edge. The console below has the full story.",
+  bio: "Systems thinker spanning industrial, enterprise, and commerce. I've run the factory, owned the P&L, led teams — and I'm fluent in the language of code. That's the edge. The console below has the full story.",
   linkedin: "https://linkedin.com/in/mrdigre",
   github: "https://github.com/mrdigre",
   email: "manudigregorio@gmail.com",
@@ -13,7 +13,7 @@ export const currentRole = {
   title: "Solutions Architect",
   period: "Apr 2025 — Present",
   description:
-    "Designing and implementing KYC, KYB, and AML solutions for enterprise clients across the Americas. Direct technical engagement with client engineering teams: scoping API integrations, troubleshooting WebSDK and mobile SDK implementations, designing custom verification flows, and architecting webhook-based event pipelines. Bridge between sales, product, and customer engineering — bringing technical depth to commercial conversations and commercial context to technical decisions.",
+    "Designing and implementing KYC, KYB, and AML solutions for enterprise clients across the Americas. Direct technical engagement with client engineering teams: scoping API integrations, evaluating WebSDK and mobile SDK options, designing custom verification flows, and architecting webhook-based event pipelines. Bridge between sales, product, and customer engineering — bringing technical depth to commercial conversations and commercial context to technical decisions.",
 };
 
 export const projects = [
@@ -110,12 +110,12 @@ export const terminalCommands = {
   └── Technical Program Management
 
   ENGINEERING
-  ├── API Integrations & SDK Implementation
-  ├── Developer-Facing Solutions & Integration DX
-  ├── JavaScript · TypeScript · React · Node.js · Python
+  ├── API & SDK Integration Architecture
+  ├── Developer-Facing Solution Design
+  ├── Technical Scoping & Implementation Guidance
+  ├── JavaScript · React · Node.js (working knowledge)
   ├── Webhooks · REST · GraphQL · Auth Flows
-  ├── AI Automation & LLM Engineering
-  └── Data Pipeline Architecture
+  └── AI-Assisted Prototyping & Automation
 
   BUSINESS
   ├── P&L Management
@@ -127,7 +127,7 @@ export const terminalCommands = {
   ├── React · Astro · TypeScript · Node.js
   ├── Supabase · PostgreSQL · REST/GraphQL
   ├── Vercel · AWS · Docker
-  └── Claude API · AI SDK · Python`,
+  └── Claude API · AI SDK (Python for AI tooling)`,
 
   impact: `> Impact & Scale
 
@@ -153,9 +153,9 @@ export const terminalCommands = {
   │   (LATAM + US + Canada enterprise accounts).
   │   Direct technical engagement with client engineering
   │   teams on a weekly basis: scoping API integrations,
-  │   troubleshooting WebSDK and mobile SDK implementations,
-  │   designing custom KYC/KYB verification flows, and
-  │   architecting webhook-based event pipelines.
+  │   evaluating WebSDK and mobile SDK options, designing
+  │   custom KYC/KYB verification flows, and architecting
+  │   webhook-based event pipelines.
   │   The bridge between sales, product, and customer eng.
   ├── AI-powered ops: LLM pipelines, agent workflows
   ├── End-to-end systems: React · Node · Python · Supabase
