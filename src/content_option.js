@@ -4,6 +4,7 @@ export const hero = {
   location: "Remote · Global",
   bio: "Systems thinker spanning industrial, enterprise, and commerce. I've run the factory, owned the P&L, led teams — and I write the code. That's the edge. The console below has the full story.",
   linkedin: "https://linkedin.com/in/mrdigre",
+  github: "https://github.com/mrdigre",
   email: "manudigregorio@gmail.com",
 };
 
@@ -12,7 +13,7 @@ export const currentRole = {
   title: "Solutions Architect",
   period: "Apr 2025 — Present",
   description:
-    "Designing and implementing KYC, KYB, and AML solutions for enterprise clients. Architecting seamless API integrations, SDK workflows, and compliance frameworks to enhance identity verification, fraud detection, and regulatory adherence at global scale.",
+    "Designing and implementing KYC, KYB, and AML solutions for enterprise clients across the Americas. Direct technical engagement with client engineering teams: scoping API integrations, troubleshooting WebSDK and mobile SDK implementations, designing custom verification flows, and architecting webhook-based event pipelines. Bridge between sales, product, and customer engineering — bringing technical depth to commercial conversations and commercial context to technical decisions.",
 };
 
 export const projects = [
@@ -32,13 +33,6 @@ export const experience = [
     company: "Sumsub",
     role: "Solutions Architect",
     period: "2025 — Present",
-    current: true,
-    chapter: "tech",
-  },
-  {
-    company: "Tegus / AlphaSense",
-    role: "Industry Expert & Strategic Consultant",
-    period: "2026 — Present",
     current: true,
     chapter: "tech",
   },
@@ -116,9 +110,11 @@ export const terminalCommands = {
   └── Technical Program Management
 
   ENGINEERING
-  ├── Full-Stack Development
-  ├── AI Automation & Agent Development
-  ├── LLM Engineering & Prompt Design
+  ├── API Integrations & SDK Implementation
+  ├── Developer-Facing Solutions & Integration DX
+  ├── JavaScript · TypeScript · React · Node.js · Python
+  ├── Webhooks · REST · GraphQL · Auth Flows
+  ├── AI Automation & LLM Engineering
   └── Data Pipeline Architecture
 
   BUSINESS
@@ -154,7 +150,13 @@ export const terminalCommands = {
   TECH AT SCALE
   ├── Sumsub — Solutions Architect
   │   Compliance infrastructure across the Americas
-  │   (LATAM + US + Canada enterprise accounts)
+  │   (LATAM + US + Canada enterprise accounts).
+  │   Direct technical engagement with client engineering
+  │   teams on a weekly basis: scoping API integrations,
+  │   troubleshooting WebSDK and mobile SDK implementations,
+  │   designing custom KYC/KYB verification flows, and
+  │   architecting webhook-based event pipelines.
+  │   The bridge between sales, product, and customer eng.
   ├── AI-powered ops: LLM pipelines, agent workflows
   ├── End-to-end systems: React · Node · Python · Supabase
   └── LLM-powered competitive intelligence:

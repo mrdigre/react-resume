@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
-import { FiLinkedin, FiMail, FiMapPin, FiSend } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiMail, FiMapPin, FiSend } from "react-icons/fi";
 import emailjs from "emailjs-com";
 import {
   hero,
@@ -470,6 +470,13 @@ export default function App() {
             onMouseLeave={(e) => { e.currentTarget.style.borderColor = T.border; e.currentTarget.style.color = T.sub; }}>
             <FiLinkedin size={12} /> LinkedIn
           </a>
+          <a href={hero.github} target="_blank" rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg border transition-all"
+            style={{ borderColor: T.border, color: T.sub }}
+            onMouseEnter={(e) => { e.currentTarget.style.borderColor = T.text; e.currentTarget.style.color = T.text; }}
+            onMouseLeave={(e) => { e.currentTarget.style.borderColor = T.border; e.currentTarget.style.color = T.sub; }}>
+            <FiGithub size={12} /> GitHub
+          </a>
           <span className="flex items-center gap-1.5 text-xs" style={{ color: T.faint }}>
             <FiMapPin size={11} /> {hero.location}
           </span>
@@ -497,6 +504,13 @@ export default function App() {
               onMouseEnter={(e) => (e.currentTarget.style.color = T.text)}
               onMouseLeave={(e) => (e.currentTarget.style.color = T.muted)}>
               <FiLinkedin size={14} /> LinkedIn
+            </a>
+            <a href={hero.github} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm transition-colors"
+              style={{ color: T.muted }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = T.text)}
+              onMouseLeave={(e) => (e.currentTarget.style.color = T.muted)}>
+              <FiGithub size={14} /> GitHub
             </a>
           </div>
         </div>
