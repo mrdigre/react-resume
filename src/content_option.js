@@ -2,7 +2,7 @@ export const hero = {
   name: "Manuel Digregorio",
   role: "Solutions Architect · Engineer · Builder",
   location: "Remote · Global",
-  bio: "Systems thinker spanning industrial, enterprise, and commerce. I've run the factory, owned the P&L, led teams — and I'm fluent in the language of code. That's the edge. The console below has the full story.",
+  bio: "Systems thinker spanning industrial, enterprise, and commerce. I've run the factory, owned the P&L, led teams — and I've built systems end-to-end. The console below has the full story.",
   linkedin: "https://linkedin.com/in/mrdigre",
   github: "https://github.com/mrdigre",
   email: "manudigregorio@gmail.com",

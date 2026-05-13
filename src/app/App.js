@@ -170,6 +170,15 @@ ${bizJobs.map((e) => `  ${e.current ? "●" : "○"} ${e.period.padEnd(18)} ${e.
       return;
     }
 
+    if (trimmed === "origin") {
+      setHistory((h) => [
+        ...h,
+        { type: "input", text: cmd },
+        { type: "output", text: terminalCommands.origin, image: "/prince-3.png" },
+      ]);
+      return;
+    }
+
     if (trimmed === "projects") {
       const output = projects
         .map(
@@ -212,7 +221,12 @@ ${bizJobs.map((e) => `  ${e.current ? "●" : "○"} ${e.period.padEnd(18)} ${e.
   return (
     <div
       className="rounded-xl overflow-hidden flex flex-col shadow-lg"
-      style={{ backgroundColor: T.termBg, border: `1px solid ${T.termBorder}`, height: "460px" }}
+      style={{
+        backgroundColor: T.termBg,
+        border: `1px solid ${T.termBorder}`,
+        minHeight: "580px",
+        maxHeight: "min(720px, 80vh)",
+      }}
     >
       {/* Title bar */}
       <div className="flex items-center gap-2 px-4 py-2.5 flex-shrink-0"
@@ -243,9 +257,31 @@ ${bizJobs.map((e) => `  ${e.current ? "●" : "○"} ${e.period.padEnd(18)} ${e.
               </div>
             )}
             {item.type === "output" && (
-              <pre className="whitespace-pre-wrap text-sm leading-relaxed" style={{ color: T.termText }}>
-                {item.text}
-              </pre>
+              item.image ? (
+                <div className="flex gap-4 items-start">
+                  <pre className="whitespace-pre-wrap text-sm leading-relaxed flex-1 min-w-0" style={{ color: T.termText }}>
+                    {item.text}
+                  </pre>
+                  <img
+                    src={item.image}
+                    alt=""
+                    aria-hidden="true"
+                    draggable={false}
+                    style={{
+                      height: "80px",
+                      width: "auto",
+                      imageRendering: "pixelated",
+                      marginTop: "4px",
+                      flexShrink: 0,
+                      opacity: 0.9,
+                    }}
+                  />
+                </div>
+              ) : (
+                <pre className="whitespace-pre-wrap text-sm leading-relaxed" style={{ color: T.termText }}>
+                  {item.text}
+                </pre>
+              )
             )}
             {item.type === "system" && (
               <div style={{ color: T.termMuted }}>{item.text}</div>
