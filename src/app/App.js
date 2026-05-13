@@ -218,6 +218,10 @@ ${bizJobs.map((e) => `  ${e.current ? "●" : "○"} ${e.period.padEnd(18)} ${e.
     window._terminalProcess = processCommand;
   }, [processCommand]);
 
+  useEffect(() => {
+    inputRef.current?.focus({ preventScroll: true });
+  }, []);
+
   return (
     <div
       className="rounded-xl overflow-hidden flex flex-col shadow-lg"
@@ -305,7 +309,6 @@ ${bizJobs.map((e) => `  ${e.current ? "●" : "○"} ${e.period.padEnd(18)} ${e.
           className="flex-1 bg-transparent outline-none font-mono text-sm"
           style={{ color: "#fff", caretColor: T.termAmber }}
           placeholder="type a command..."
-          autoFocus
         />
       </form>
     </div>
