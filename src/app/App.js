@@ -35,32 +35,78 @@ const T = {
   termAmber: "#D4B64E",
 };
 
-/* ── Prince Mascot (pixel-art homage to 1989 Prince of Persia sword attack) ── */
-const PRINCE_FRAME_TIMINGS = [700, 130, 220, 150]; // ready hold, wind-back, thrust peak, recovery
+/* ── Pixel Croc Mascot (3/4 view, open jaw, two eyes, near eye winks) ── */
 function PixelMascot() {
-  const [frame, setFrame] = useState(0);
-  useEffect(() => {
-    const t = setTimeout(() => setFrame((f) => (f + 1) % 4), PRINCE_FRAME_TIMINGS[frame]);
-    return () => clearTimeout(t);
-  }, [frame]);
   return (
-    <div
-      className="relative h-16 sm:h-20 flex-shrink-0"
-      style={{ aspectRatio: "880 / 927" }}
-      aria-label="Pixel art Prince of Persia sword thrust animation"
-      role="img"
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 80 44"
+      className="w-20 sm:w-28 h-auto flex-shrink-0"
+      style={{ imageRendering: "pixelated" }}
     >
-      {[1, 2, 3, 4].map((n, i) => (
-        <img
-          key={n}
-          src={`/prince-${n}.png`}
-          alt=""
-          className="absolute inset-0 w-full h-full"
-          style={{ imageRendering: "pixelated", opacity: i === frame ? 1 : 0 }}
-          draggable={false}
+      {/* Back spikes */}
+      <rect x="6" y="2" width="3" height="3" fill="#2a7a3a" />
+      <rect x="12" y="2" width="3" height="3" fill="#2a7a3a" />
+      <rect x="18" y="2" width="3" height="3" fill="#2a7a3a" />
+      <rect x="24" y="3" width="3" height="3" fill="#2a7a3a" />
+      {/* Head skull */}
+      <rect x="4" y="5" width="22" height="3" fill="#3a9a4e" />
+      <rect x="2" y="8" width="26" height="14" fill="#3a9a4e" />
+      <rect x="4" y="22" width="22" height="6" fill="#3a9a4e" />
+      <rect x="6" y="28" width="18" height="3" fill="#2d7a38" />
+      {/* Upper jaw (snout) extending right — tapers */}
+      <rect x="26" y="14" width="18" height="3" fill="#3a9a4e" />
+      <rect x="26" y="17" width="28" height="3" fill="#3a9a4e" />
+      <rect x="26" y="20" width="34" height="3" fill="#3a9a4e" />
+      <rect x="26" y="23" width="36" height="2" fill="#2d7a38" />
+      {/* Snout tip + nostril */}
+      <rect x="60" y="15" width="3" height="2" fill="#3a9a4e" />
+      <rect x="58" y="12" width="2" height="3" fill="#1a5a26" />
+      {/* Mouth interior (dark) */}
+      <rect x="26" y="25" width="36" height="3" fill="#0a0a0a" />
+      {/* Upper teeth hanging into mouth */}
+      <rect x="28" y="25" width="2" height="2" fill="#e8e8d0" />
+      <rect x="34" y="25" width="2" height="3" fill="#e8e8d0" />
+      <rect x="40" y="25" width="2" height="2" fill="#e8e8d0" />
+      <rect x="46" y="25" width="2" height="2" fill="#e8e8d0" />
+      <rect x="52" y="25" width="2" height="2" fill="#e8e8d0" />
+      <rect x="58" y="25" width="2" height="2" fill="#e8e8d0" />
+      {/* Lower jaw (separate, slightly shorter) */}
+      <rect x="26" y="28" width="34" height="3" fill="#3a9a4e" />
+      <rect x="24" y="31" width="28" height="2" fill="#2d7a38" />
+      {/* Lower teeth pointing up — offset from upper */}
+      <rect x="31" y="26" width="2" height="2" fill="#e8e8d0" />
+      <rect x="37" y="26" width="2" height="2" fill="#e8e8d0" />
+      <rect x="43" y="26" width="2" height="2" fill="#e8e8d0" />
+      <rect x="49" y="26" width="2" height="2" fill="#e8e8d0" />
+      <rect x="55" y="26" width="2" height="2" fill="#e8e8d0" />
+      {/* Far eye — stays OPEN */}
+      <rect x="6" y="10" width="8" height="8" fill="#e8e8d0" />
+      <rect x="9" y="12" width="4" height="4" fill="#111" />
+      <rect x="10" y="13" width="2" height="2" fill="#444" />
+      {/* Near eye — WINKS */}
+      <g>
+        <rect x="16" y="10" width="9" height="9" fill="#e8e8d0" />
+        <rect x="20" y="13" width="4" height="4" fill="#111" />
+        <rect x="21" y="14" width="2" height="2" fill="#444" />
+        <animateTransform
+          attributeName="transform"
+          type="scale"
+          values="1 1;1 1;1 1;1 0.1;1 1;1 1"
+          keyTimes="0;0.75;0.79;0.82;0.86;1"
+          dur="4s"
+          repeatCount="indefinite"
+          additive="sum"
         />
-      ))}
-    </div>
+        <animate
+          attributeName="opacity"
+          values="1;1;1;0.3;1;1"
+          keyTimes="0;0.75;0.79;0.82;0.86;1"
+          dur="4s"
+          repeatCount="indefinite"
+        />
+      </g>
+    </svg>
   );
 }
 
