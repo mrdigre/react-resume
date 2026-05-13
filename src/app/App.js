@@ -170,15 +170,6 @@ ${bizJobs.map((e) => `  ${e.current ? "●" : "○"} ${e.period.padEnd(18)} ${e.
       return;
     }
 
-    if (trimmed === "origin") {
-      setHistory((h) => [
-        ...h,
-        { type: "input", text: cmd },
-        { type: "output", text: terminalCommands.origin, image: "/prince-3.png" },
-      ]);
-      return;
-    }
-
     if (trimmed === "projects") {
       const output = projects
         .map(
@@ -261,31 +252,9 @@ ${bizJobs.map((e) => `  ${e.current ? "●" : "○"} ${e.period.padEnd(18)} ${e.
               </div>
             )}
             {item.type === "output" && (
-              item.image ? (
-                <div className="flex gap-4 items-start">
-                  <pre className="whitespace-pre-wrap text-sm leading-relaxed flex-1 min-w-0" style={{ color: T.termText }}>
-                    {item.text}
-                  </pre>
-                  <img
-                    src={item.image}
-                    alt=""
-                    aria-hidden="true"
-                    draggable={false}
-                    style={{
-                      height: "80px",
-                      width: "auto",
-                      imageRendering: "pixelated",
-                      marginTop: "4px",
-                      flexShrink: 0,
-                      opacity: 0.9,
-                    }}
-                  />
-                </div>
-              ) : (
-                <pre className="whitespace-pre-wrap text-sm leading-relaxed" style={{ color: T.termText }}>
-                  {item.text}
-                </pre>
-              )
+              <pre className="whitespace-pre-wrap text-sm leading-relaxed" style={{ color: T.termText }}>
+                {item.text}
+              </pre>
             )}
             {item.type === "system" && (
               <div style={{ color: T.termMuted }}>{item.text}</div>
