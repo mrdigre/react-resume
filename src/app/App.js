@@ -221,8 +221,7 @@ ${bizJobs.map((e) => `  ${e.current ? "●" : "○"} ${e.period.padEnd(18)} ${e.
       style={{
         backgroundColor: T.termBg,
         border: `1px solid ${T.termBorder}`,
-        minHeight: "580px",
-        maxHeight: "min(720px, 80vh)",
+        height: "580px",
       }}
     >
       {/* Title bar */}
