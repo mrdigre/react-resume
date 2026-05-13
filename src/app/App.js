@@ -113,7 +113,7 @@ function PixelMascot() {
 /* ── Terminal Component ─────────────────────────────────── */
 function Terminal() {
   const [history, setHistory] = useState([
-    { type: "system", text: "Welcome. Type 'help' for commands, or click below to explore." },
+    { type: "system", text: "Welcome. Type 'help' for commands, or use the Quick Commands to explore." },
     { type: "input", text: "about" },
     { type: "output", text: terminalCommands.about },
   ]);
