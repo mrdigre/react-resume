@@ -22,8 +22,11 @@ export const projects = [
     name: "Goodneys LLC",
     label: "Co-Founder · Technical Architect",
     tagline: "E-Commerce Infrastructure + AI-Driven Operations",
+    note: "Founded 2015 · Advisory role since 2020",
     description:
-      "Premium e-commerce holding on Amazon US. End-to-end ownership: brand, product, growth, and the full tech & ops stack — internal dashboards, LLM-powered competitive intelligence, PPC tools, DTC landings. Flagship: Kiki & Koda — premium biodegradable pet essentials.",
+      "Premium e-commerce holding I co-founded in 2015. Built end-to-end: brand, product, growth, and the full tech & ops stack — internal dashboards, LLM-powered competitive intelligence, PPC tools, DTC landings. Flagship: Kiki & Koda — premium biodegradable pet essentials. Since 2020 operated day-to-day by my co-founder; I provide technical advisory on architecture.",
+    descriptionLong:
+      "Premium e-commerce holding on Amazon US. Built end-to-end: brand, product, growth, and the full tech & ops stack — internal dashboards, LLM-powered competitive intelligence, PPC tools, DTC landings. Flagship: Kiki & Koda — premium biodegradable pet essentials. Since 2020 operated by my co-founder; I remain involved on technical architecture and AI integrations.",
     tech: ["Astro", "React", "Supabase", "Vercel", "Claude API", "Resend"],
   },
 ];
@@ -50,9 +53,9 @@ export const experience = [
   },
   {
     company: "Goodneys LLC",
-    role: "Co-Founder & Technical Lead",
+    role: "Co-Founder (Advisor since 2020)",
     period: "2015 — Present",
-    current: true,
+    current: false,
     chapter: "business",
   },
   {
@@ -132,9 +135,11 @@ export const terminalCommands = {
   impact: `> Impact & Scale
 
   COMPANIES BUILT
-  ├── Goodneys LLC — Co-Founder since 2015
-  │   Brand, product, ops and full tech stack from scratch
-  │   Flagship: Kiki & Koda (Amazon US + kikikoda.com)
+  ├── Goodneys LLC — Co-Founder, founded 2015
+  │   Built brand, product, ops and full tech stack from scratch.
+  │   Flagship: Kiki & Koda (Amazon US + kikikoda.com).
+  │   Since 2020 operated by my co-founder; I remain
+  │   involved as technical advisor on architecture decisions.
   └── Multiple DTC brand launches and iterations
 
   TEAMS & P&L

@@ -172,15 +172,17 @@ ${bizJobs.map((e) => `  ${e.current ? "●" : "○"} ${e.period.padEnd(18)} ${e.
 
     if (trimmed === "projects") {
       const output = projects
-        .map(
-          (p) => `> ${p.name}
+        .map((p) => {
+          const noteLine = p.note ? `\n  ${p.note}` : "";
+          const desc = p.descriptionLong || p.description;
+          return `> ${p.name}
   ${p.label}
-  ${p.tagline}
+  ${p.tagline}${noteLine}
 
-  ${p.description}
+  ${desc}
 
-  Stack: ${p.tech.join(" · ")}`
-        )
+  Stack: ${p.tech.join(" · ")}`;
+        })
         .join("\n\n");
       setHistory((h) => [...h, { type: "input", text: cmd }, { type: "output", text: output }]);
       return;
