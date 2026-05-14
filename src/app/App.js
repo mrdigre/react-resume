@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { FiGithub, FiLinkedin, FiMail, FiMapPin, FiSend } from "react-icons/fi";
 import emailjs from "emailjs-com";
+import { Analytics } from "@vercel/analytics/react";
 import {
   hero,
   currentRole,
@@ -605,6 +606,8 @@ export default function App() {
           Manuel Digregorio · {new Date().getFullYear()}
         </p>
       </div>
+
+      <Analytics />
     </div>
   );
 }
