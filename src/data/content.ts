@@ -119,7 +119,6 @@ export const projects: Project[] = [
       "Anthropic Claude API",
       "Telegram Bot API",
     ],
-    github: "https://github.com/mrdigre/ppc-agent",
   },
 ];
 
