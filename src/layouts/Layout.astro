@@ -1,0 +1,97 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Manuel Digregorio — Solutions Architect · Engineer · Builder",
+  description = "Manuel Digregorio — Solutions Architect at Sumsub, Co-Founder of Goodneys LLC, builder of AI agents. I've run the factory, owned the P&L, led teams — and I write the code, including production LLM agents.",
+} = Astro.props;
+
+const siteUrl = "https://mrdigre.vercel.app/";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/md.svg" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#070708" />
+    <meta name="author" content="Manuel Digregorio" />
+    <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content="Manuel Digregorio, Manu Digregorio, Solutions Engineer, Solutions Architect, AI Agent Developer, LLM Integration, Anthropic Claude API, FastAPI, Python, Builder, Problem Solver, Goodneys, Kiki & Koda, Sumsub, Industrial Engineer, Mendoza, Argentina"
+    />
+
+    <link rel="canonical" href={siteUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:site_name" content="Manuel Digregorio" />
+    <meta property="og:image" content={`${siteUrl}md.svg`} />
+    <meta property="profile:first_name" content="Manuel" />
+    <meta property="profile:last_name" content="Digregorio" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteUrl}md.svg`} />
+
+    <title>{title}</title>
+
+    <!-- Structured data: Person -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: "Manuel Digregorio",
+        givenName: "Manuel",
+        familyName: "Digregorio",
+        alternateName: ["Manu Digregorio", "Manuel Di Gregorio"],
+        jobTitle: "Solutions Architect · Engineer · Builder",
+        description:
+          "Senior Solutions Architect at Sumsub, Co-Founder of Goodneys LLC, Industrial Engineer, builder of production AI agents.",
+        email: "mailto:manudigregorio@gmail.com",
+        url: siteUrl,
+        image: `${siteUrl}md.svg`,
+        sameAs: [
+          "https://linkedin.com/in/mrdigre",
+          "https://github.com/mrdigre",
+          "https://kikikoda.com",
+        ],
+        worksFor: [
+          { "@type": "Organization", name: "Sumsub", url: "https://sumsub.com" },
+          { "@type": "Organization", name: "Goodneys LLC" },
+        ],
+        knowsAbout: [
+          "Solutions Architecture",
+          "KYC/KYB/AML Compliance",
+          "API & SDK Integration",
+          "LLM Agent Architecture",
+          "Anthropic Claude API",
+          "FastAPI",
+          "Python",
+          "AI Automation",
+          "Systems Design",
+          "P&L Management",
+          "E-commerce",
+          "Brand Development",
+        ],
+      })}
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,42 @@
+---
+import { Analytics } from "@vercel/analytics/react";
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import SkillsSection from "../components/SkillsSection.astro";
+import ProjectsSection from "../components/ProjectsSection.astro";
+import CurrentRoleCard from "../components/CurrentRoleCard.astro";
+import ExperienceCard from "../components/ExperienceCard.astro";
+import ContactCard from "../components/ContactCard.astro";
+import TerminalSection from "../components/TerminalSection.astro";
+import OriginSection from "../components/OriginSection.astro";
+---
+
+<Layout>
+  <div class="min-h-screen px-4 py-8 md:px-8 md:py-10 bg-[#FAFAFA]">
+    <Hero />
+
+    <SkillsSection />
+
+    <ProjectsSection />
+
+    <div class="max-w-5xl mx-auto mb-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+        <CurrentRoleCard />
+        <ExperienceCard />
+        <ContactCard />
+      </div>
+    </div>
+
+    <TerminalSection />
+
+    <OriginSection />
+
+    <div class="max-w-5xl mx-auto mt-8 pt-5 flex items-center justify-center border-t border-[#E8E8E8]">
+      <p class="font-mono text-xs text-[#AAA]">
+        Manuel Digregorio · {new Date().getFullYear()}
+      </p>
+    </div>
+
+    <Analytics client:load />
+  </div>
+</Layout>

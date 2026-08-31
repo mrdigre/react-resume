@@ -1,0 +1,23 @@
+---
+import Card from "./Card.astro";
+import SectionLabel from "./SectionLabel.astro";
+import { currentRole } from "../data/content";
+---
+
+<Card class="justify-between gap-0">
+  <div>
+    <SectionLabel>Current</SectionLabel>
+    <p class="text-lg font-bold leading-tight mb-1 text-[#1A1A1A]">
+      {currentRole.company}
+    </p>
+    <p class="text-sm mb-3 text-[#444]">
+      {currentRole.title}
+    </p>
+    <p class="text-sm leading-[1.8] text-[#777]">
+      {currentRole.description}
+    </p>
+  </div>
+  <p class="font-mono text-xs mt-4 text-[#AAA]">
+    {currentRole.period}
+  </p>
+</Card>

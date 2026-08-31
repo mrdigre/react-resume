@@ -1,0 +1,74 @@
+---
+import PixelMascot from "./PixelMascot.astro";
+import { hero } from "../data/content";
+---
+
+<div class="max-w-5xl mx-auto">
+  <div
+    class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8 pb-5 border-b border-[#E8E8E8]"
+  >
+    <div class="flex items-center gap-3 sm:gap-4 min-w-0">
+      <PixelMascot />
+      <div class="min-w-0">
+        <h1 class="text-lg sm:text-xl font-bold leading-tight text-[#1A1A1A]">
+          {hero.name}
+        </h1>
+        <p class="text-xs sm:text-sm mt-0.5 leading-snug text-[#777]">
+          {hero.role}
+        </p>
+      </div>
+    </div>
+    <div class="flex items-center gap-3 sm:gap-4 flex-wrap">
+      <a
+        href={hero.linkedin}
+        target="_blank"
+        rel="noreferrer"
+        class="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg border border-[#E8E8E8] text-[#444] transition-all hover:border-[#1A1A1A] hover:text-[#1A1A1A]"
+      >
+        LinkedIn
+      </a>
+      <a
+        href={hero.github}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg border border-[#E8E8E8] text-[#444] transition-all hover:border-[#1A1A1A] hover:text-[#1A1A1A]"
+      >
+        GitHub
+      </a>
+      <span class="flex items-center gap-1.5 text-xs text-[#AAA]">
+        {hero.location}
+      </span>
+    </div>
+  </div>
+
+  <div class="mb-10 max-w-3xl">
+    <p class="text-base sm:text-lg leading-[1.85] text-[#444]">
+      {hero.bio}
+    </p>
+    <div class="mt-7 flex items-center gap-4 flex-wrap">
+      <a
+        href="#talk"
+        class="inline-flex items-center gap-2 text-sm font-medium px-5 py-3 rounded-lg bg-[#1A1A1A] text-white transition-all hover:bg-[#B8922A]"
+      >
+        Let's talk
+        <span aria-hidden="true">→</span>
+      </a>
+      <a
+        href={hero.linkedin}
+        target="_blank"
+        rel="noreferrer"
+        class="inline-flex items-center gap-1.5 text-sm text-[#777] transition-colors hover:text-[#1A1A1A]"
+      >
+        LinkedIn
+      </a>
+      <a
+        href={hero.github}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 text-sm text-[#777] transition-colors hover:text-[#1A1A1A]"
+      >
+        GitHub
+      </a>
+    </div>
+  </div>
+</div>

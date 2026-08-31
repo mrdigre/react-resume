@@ -1,0 +1,63 @@
+---
+import Card from "./Card.astro";
+import SectionLabel from "./SectionLabel.astro";
+import { projects } from "../data/content";
+---
+
+<div class="max-w-5xl mx-auto mb-4">
+  <SectionLabel>Featured Projects</SectionLabel>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    {
+      projects.map((project) => (
+        <Card class="justify-between gap-0">
+          <div>
+            <p class="text-xs font-medium uppercase tracking-wider mb-1 text-[#AAA]">
+              {project.label}
+            </p>
+            <h3 class="text-lg font-bold mb-1 leading-snug text-[#1A1A1A]">
+              {project.name}
+            </h3>
+            <p class="text-xs font-medium uppercase tracking-wider mb-3 text-[#777]">
+              {project.tagline}
+            </p>
+            <p class="text-sm leading-[1.8] text-[#777]">
+              {project.description}
+            </p>
+          </div>
+          <div class="w-full h-px my-4 bg-[#E8E8E8]" />
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            {project.tech.map((t) => (
+              <span class="font-mono text-[0.65rem] px-2 py-0.5 rounded border border-[#E8E8E8] bg-[#F5F5F5] text-[#AAA]">
+                {t}
+              </span>
+            ))}
+          </div>
+          {(project.github || project.url) && (
+            <div class="flex gap-4">
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-xs font-medium text-[#444] hover:text-[#1A1A1A] transition-colors"
+                >
+                  View on GitHub →
+                </a>
+              )}
+              {project.url && (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-xs font-medium text-[#444] hover:text-[#1A1A1A] transition-colors"
+                >
+                  Visit site →
+                </a>
+              )}
+            </div>
+          )}
+        </Card>
+      ))
+    }
+  </div>
+</div>

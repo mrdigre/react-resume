@@ -1,0 +1,52 @@
+---
+import Card from "./Card.astro";
+import SectionLabel from "./SectionLabel.astro";
+import { experience } from "../data/content";
+---
+
+<Card>
+  <SectionLabel>Experience</SectionLabel>
+  <div>
+    {
+      experience.map((item, i) => (
+        <div class="flex gap-3">
+          <div class="flex flex-col items-center flex-shrink-0 pt-[5px]">
+            <div
+              class:list={[
+                "w-2 h-2 rounded-full flex-shrink-0",
+                item.current ? "bg-[#3D8B5E]" : "bg-[#AAA]",
+              ]}
+            />
+            {i < experience.length - 1 && (
+              <div class="w-px flex-1 mt-1.5 bg-[#E8E8E8] min-h-[22px]" />
+            )}
+          </div>
+          <div class="pb-3 flex-1 min-w-0">
+            <p
+              class:list={[
+                "text-sm font-semibold leading-snug",
+                item.current ? "text-[#1A1A1A]" : "text-[#444]",
+              ]}
+            >
+              {item.company}
+            </p>
+            <p class="text-xs mt-0.5 text-[#777]">{item.role}</p>
+            <div class="flex items-center gap-2 mt-0.5">
+              <p class="font-mono text-[0.65rem] text-[#AAA]">{item.period}</p>
+              <span
+                class:list={[
+                  "font-mono text-[0.55rem] px-1.5 py-0.5 rounded border",
+                  item.chapter === "tech"
+                    ? "bg-[#3D8B5E]/[0.08] text-[#3D8B5E] border-[#3D8B5E]/20"
+                    : "bg-[#B8922A]/[0.08] text-[#B8922A] border-[#B8922A]/20",
+                ]}
+              >
+                {item.chapter === "tech" ? "TECH" : "BIZ"}
+              </span>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</Card>
