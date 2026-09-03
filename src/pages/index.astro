@@ -1,42 +1,46 @@
 ---
 import { Analytics } from "@vercel/analytics/react";
 import Layout from "../layouts/Layout.astro";
+import ChapterNav from "../components/ChapterNav.astro";
 import Hero from "../components/Hero.astro";
+import OriginSection from "../components/OriginSection.astro";
+import AgenticSection from "../components/AgenticSection.astro";
 import SkillsSection from "../components/SkillsSection.astro";
 import ProjectsSection from "../components/ProjectsSection.astro";
+import SectionLabel from "../components/SectionLabel.astro";
 import CurrentRoleCard from "../components/CurrentRoleCard.astro";
-import ExperienceCard from "../components/ExperienceCard.astro";
-import ContactCard from "../components/ContactCard.astro";
-import TerminalSection from "../components/TerminalSection.astro";
-import OriginSection from "../components/OriginSection.astro";
+import LetsBuildCard from "../components/LetsBuildCard.astro";
+import { hero } from "../data/content";
 ---
 
 <Layout>
-  <div class="min-h-screen px-4 py-8 md:px-8 md:py-10 bg-[#FAFAFA]">
-    <Hero />
+  <ChapterNav />
 
+  <Hero />
+
+  <OriginSection />
+
+  <section id="build" class="max-w-6xl mx-auto px-6 md:px-20 py-20 md:py-28 scroll-mt-20">
+    <SectionLabel index="02">Build</SectionLabel>
+    <AgenticSection />
     <SkillsSection />
-
     <ProjectsSection />
+  </section>
 
-    <div class="max-w-5xl mx-auto mb-4">
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-        <CurrentRoleCard />
-        <ExperienceCard />
-        <ContactCard />
-      </div>
+  <section id="now" class="max-w-6xl mx-auto px-6 md:px-20 py-20 md:py-28 scroll-mt-20">
+    <SectionLabel index="03">Now</SectionLabel>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <CurrentRoleCard />
+      <LetsBuildCard />
     </div>
+  </section>
 
-    <TerminalSection />
+  <footer class="max-w-6xl mx-auto px-6 md:px-20 py-10 border-t border-[var(--border)] flex flex-col sm:flex-row items-center justify-between gap-3">
+    <p class="font-mono text-xs text-[var(--fg-subtle)]">
+      {hero.name} · {new Date().getFullYear()}
+    </p>
+    <p class="font-mono text-xs text-[var(--fg-subtle)]">ALWAYS BUILDING</p>
+  </footer>
 
-    <OriginSection />
-
-    <div class="max-w-5xl mx-auto mt-8 pt-5 flex items-center justify-center border-t border-[#E8E8E8]">
-      <p class="font-mono text-xs text-[#AAA]">
-        Manuel Digregorio · {new Date().getFullYear()}
-      </p>
-    </div>
-
-    <Analytics client:load />
-  </div>
+  <Analytics client:load />
 </Layout>

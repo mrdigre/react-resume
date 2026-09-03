@@ -7,8 +7,8 @@ interface Props {
 }
 
 const {
-  title = "Manuel Digregorio — Solutions Architect · Engineer · Builder",
-  description = "Manuel Digregorio — Solutions Architect at Sumsub, Co-Founder of Goodneys LLC, builder of AI agents. I've run the factory, owned the P&L, led teams — and I write the code, including production LLM agents.",
+  title = "Manuel Digregorio — Solutions Architect · AI Systems",
+  description = "Manuel Digregorio — Solutions Architect at Sumsub. I design integrations, software architectures, and AI pipelines that run in production, connecting enterprise infrastructure with modern software.",
 } = Astro.props;
 
 const siteUrl = "https://mrdigre.vercel.app/";
@@ -21,12 +21,12 @@ const siteUrl = "https://mrdigre.vercel.app/";
     <link rel="icon" type="image/svg+xml" href="/md.svg" />
     <link rel="manifest" href="/manifest.json" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#070708" />
+    <meta name="theme-color" content="#0a0d14" />
     <meta name="author" content="Manuel Digregorio" />
     <meta name="description" content={description} />
     <meta
       name="keywords"
-      content="Manuel Digregorio, Manu Digregorio, Solutions Engineer, Solutions Architect, AI Agent Developer, LLM Integration, Anthropic Claude API, FastAPI, Python, Builder, Problem Solver, Goodneys, Kiki & Koda, Sumsub, Industrial Engineer, Mendoza, Argentina"
+      content="Manuel Digregorio, Manu Digregorio, Solutions Architect, Forward-Deployed Engineer, Solutions Engineer, AI Agent Developer, Agentic Systems, LLM Integration, Anthropic Claude API, FastAPI, Python, Sumsub, Industrial Engineer, Mendoza, Argentina"
     />
 
     <link rel="canonical" href={siteUrl} />
@@ -51,6 +51,7 @@ const siteUrl = "https://mrdigre.vercel.app/";
 
     <!-- Structured data: Person -->
     <script
+      is:inline
       type="application/ld+json"
       set:html={JSON.stringify({
         "@context": "https://schema.org",
@@ -59,9 +60,9 @@ const siteUrl = "https://mrdigre.vercel.app/";
         givenName: "Manuel",
         familyName: "Digregorio",
         alternateName: ["Manu Digregorio", "Manuel Di Gregorio"],
-        jobTitle: "Solutions Architect · Engineer · Builder",
+        jobTitle: "Solutions Architect · AI Systems",
         description:
-          "Senior Solutions Architect at Sumsub, Co-Founder of Goodneys LLC, Industrial Engineer, builder of production AI agents.",
+          "Solutions Architect at Sumsub designing integrations, software architectures, and AI pipelines that run in production — connecting enterprise infrastructure with modern software.",
         email: "mailto:manudigregorio@gmail.com",
         url: siteUrl,
         image: `${siteUrl}md.svg`,
@@ -72,21 +73,19 @@ const siteUrl = "https://mrdigre.vercel.app/";
         ],
         worksFor: [
           { "@type": "Organization", name: "Sumsub", url: "https://sumsub.com" },
-          { "@type": "Organization", name: "Goodneys LLC" },
         ],
         knowsAbout: [
           "Solutions Architecture",
+          "Forward-Deployed Engineering",
           "KYC/KYB/AML Compliance",
           "API & SDK Integration",
-          "LLM Agent Architecture",
+          "LLM Agent Architecture & Orchestration",
           "Anthropic Claude API",
+          "Human-in-the-Loop Automation",
           "FastAPI",
           "Python",
-          "AI Automation",
           "Systems Design",
           "P&L Management",
-          "E-commerce",
-          "Brand Development",
         ],
       })}
     />

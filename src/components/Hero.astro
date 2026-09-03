@@ -1,74 +1,67 @@
 ---
-import PixelMascot from "./PixelMascot.astro";
 import { hero } from "../data/content";
+import PipelineDiagram from "./PipelineDiagram.astro";
 ---
 
-<div class="max-w-5xl mx-auto">
-  <div
-    class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8 pb-5 border-b border-[#E8E8E8]"
-  >
-    <div class="flex items-center gap-3 sm:gap-4 min-w-0">
-      <PixelMascot />
-      <div class="min-w-0">
-        <h1 class="text-lg sm:text-xl font-bold leading-tight text-[#1A1A1A]">
-          {hero.name}
-        </h1>
-        <p class="text-xs sm:text-sm mt-0.5 leading-snug text-[#777]">
-          {hero.role}
-        </p>
-      </div>
-    </div>
-    <div class="flex items-center gap-3 sm:gap-4 flex-wrap">
-      <a
-        href={hero.linkedin}
-        target="_blank"
-        rel="noreferrer"
-        class="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg border border-[#E8E8E8] text-[#444] transition-all hover:border-[#1A1A1A] hover:text-[#1A1A1A]"
-      >
-        LinkedIn
-      </a>
-      <a
-        href={hero.github}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg border border-[#E8E8E8] text-[#444] transition-all hover:border-[#1A1A1A] hover:text-[#1A1A1A]"
-      >
-        GitHub
-      </a>
-      <span class="flex items-center gap-1.5 text-xs text-[#AAA]">
-        {hero.location}
-      </span>
-    </div>
+<div id="top" class="max-w-6xl mx-auto px-6 md:px-20 pt-20 pb-24 md:pt-28 md:pb-32">
+  <p class="font-mono text-xs md:text-sm tracking-[0.2em] text-[var(--accent)] mb-6">
+    [ {hero.kicker} ]
+  </p>
+
+  <h1 class="font-bold leading-[0.95] tracking-tight text-[15vw] sm:text-[9vw] md:text-[6.2rem] text-[var(--fg)]">
+    {hero.name.split(" ")[0]}<br />{hero.name.split(" ")[1]}
+  </h1>
+
+  <p class="mt-8 font-bold uppercase leading-[1.1] text-2xl sm:text-3xl md:text-[2.4rem] max-w-3xl text-[var(--fg)]">
+    {hero.statement}
+  </p>
+
+  <div class="mt-6 flex flex-col gap-4 max-w-2xl">
+    {
+      hero.bio.map((paragraph) => (
+        <p class="text-base md:text-lg leading-[1.75] text-[var(--fg-muted)]">{paragraph}</p>
+      ))
+    }
   </div>
 
-  <div class="mb-10 max-w-3xl">
-    <p class="text-base sm:text-lg leading-[1.85] text-[#444]">
-      {hero.bio}
-    </p>
-    <div class="mt-7 flex items-center gap-4 flex-wrap">
-      <a
-        href="#talk"
-        class="inline-flex items-center gap-2 text-sm font-medium px-5 py-3 rounded-lg bg-[#1A1A1A] text-white transition-all hover:bg-[#B8922A]"
-      >
-        Let's talk
-        <span aria-hidden="true">→</span>
-      </a>
-      <a
-        href={hero.linkedin}
-        target="_blank"
-        rel="noreferrer"
-        class="inline-flex items-center gap-1.5 text-sm text-[#777] transition-colors hover:text-[#1A1A1A]"
-      >
-        LinkedIn
-      </a>
-      <a
-        href={hero.github}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center gap-1.5 text-sm text-[#777] transition-colors hover:text-[#1A1A1A]"
-      >
-        GitHub
-      </a>
-    </div>
+  <div class="mt-9 flex items-center gap-5 flex-wrap">
+    <a
+      href="#now"
+      class="inline-flex items-center gap-2 font-mono text-sm px-5 py-3 bg-[var(--accent)] text-[var(--bg-panel)] font-medium transition-all hover:bg-[var(--accent-strong)]"
+    >
+      Let's talk
+      <span aria-hidden="true">→</span>
+    </a>
+    <a
+      href="#build"
+      class="inline-flex items-center gap-2 font-mono text-sm px-5 py-3 border border-[var(--border-strong)] text-[var(--fg)] transition-all hover:border-[var(--accent)] hover:text-[var(--accent)]"
+    >
+      View the work
+    </a>
+    <a
+      href={hero.linkedin}
+      target="_blank"
+      rel="noreferrer"
+      class="font-mono text-sm text-[var(--fg-subtle)] hover:text-[var(--fg)] transition-colors"
+    >
+      LinkedIn
+    </a>
+    <a
+      href={hero.github}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="font-mono text-sm text-[var(--fg-subtle)] hover:text-[var(--fg)] transition-colors"
+    >
+      GitHub
+    </a>
+  </div>
+
+  <div class="mt-20 md:mt-28">
+    <PipelineDiagram />
+  </div>
+
+  <div class="mt-10 flex flex-col sm:flex-row sm:items-center gap-2 sm:justify-between font-mono text-xs tracking-[0.14em] text-[var(--fg-subtle)]">
+    <span>ALWAYS BUILDING</span>
+    <span>{hero.location.toUpperCase()}</span>
   </div>
 </div>

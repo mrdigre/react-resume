@@ -1,3 +1,11 @@
-<p class="font-mono text-xs uppercase tracking-[0.16em] mb-4 text-[#AAA]">
-  <slot />
+---
+interface Props {
+  index?: string;
+}
+
+const { index } = Astro.props;
+---
+
+<p class="font-mono text-xs uppercase tracking-[0.16em] mb-5 text-[var(--fg-subtle)]">
+  {index && <span class="text-[var(--accent)]">{index} — </span>}<slot />
 </p>

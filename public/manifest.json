@@ -1,6 +1,6 @@
 {
   "short_name": "Manuel Digregorio",
-  "name": "Manuel Digregorio — Solutions Architect · Engineer · Builder",
+  "name": "Manuel Digregorio — Solutions Architect · Forward-Deployed Engineer",
   "icons": [
     {
       "src": "md.svg",
@@ -10,6 +10,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#070708",
-  "background_color": "#FAFAFA"
+  "theme_color": "#0a0d14",
+  "background_color": "#0a0d14"
 }

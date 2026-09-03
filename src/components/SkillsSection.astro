@@ -1,29 +1,23 @@
 ---
-import Card from "./Card.astro";
 import SectionLabel from "./SectionLabel.astro";
 import { skillGroups } from "../data/content";
 ---
 
-<div class="max-w-5xl mx-auto mb-4">
-  <Card>
-    <SectionLabel>Skills & Expertise</SectionLabel>
-    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-      {
-        skillGroups.map((group) => (
-          <div>
-            <p class="font-mono text-xs font-semibold uppercase tracking-wider mb-2.5 text-[#B8922A]">
-              {group.label}
-            </p>
-            <div class="flex flex-wrap gap-1.5">
-              {group.items.map((item) => (
-                <span class="text-xs px-2.5 py-1 rounded-full border border-[#E8E8E8] bg-[#F5F5F5] text-[#444]">
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-        ))
-      }
-    </div>
-  </Card>
+<div class="mb-16 md:mb-20">
+  <SectionLabel index="02.2">Core Stack</SectionLabel>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {
+      skillGroups.map((group) => (
+        <div class="border border-[var(--border)] bg-[var(--bg-elevated)] p-6">
+          <p class="font-mono text-xs text-[var(--accent)] mb-2">{group.index}</p>
+          <p class="font-semibold text-base mb-3 text-[var(--fg)]">{group.label}</p>
+          <ul class="flex flex-col gap-1.5">
+            {group.items.map((item) => (
+              <li class="font-mono text-xs leading-[1.6] text-[var(--fg-subtle)]">{item}</li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
 </div>

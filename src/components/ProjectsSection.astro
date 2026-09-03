@@ -4,30 +4,33 @@ import SectionLabel from "./SectionLabel.astro";
 import { projects } from "../data/content";
 ---
 
-<div class="max-w-5xl mx-auto mb-4">
-  <SectionLabel>Featured Projects</SectionLabel>
+<div class="mb-16 md:mb-20">
+  <SectionLabel index="02.3">Selected Work</SectionLabel>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
     {
       projects.map((project) => (
-        <Card class="justify-between gap-0">
+        <Card class="justify-between gap-0" highlight={project.featured}>
           <div>
-            <p class="text-xs font-medium uppercase tracking-wider mb-1 text-[#AAA]">
-              {project.label}
-            </p>
-            <h3 class="text-lg font-bold mb-1 leading-snug text-[#1A1A1A]">
-              {project.name}
-            </h3>
-            <p class="text-xs font-medium uppercase tracking-wider mb-3 text-[#777]">
+            <div class="flex items-start justify-between gap-3 mb-1">
+              <p class="font-mono text-xs uppercase tracking-wider text-[var(--fg-subtle)]">
+                {project.label}
+              </p>
+              {project.note && (
+                <p class="font-mono text-[0.65rem] text-[var(--fg-subtle)] whitespace-nowrap">
+                  {project.note}
+                </p>
+              )}
+            </div>
+            <h3 class="text-xl font-bold mb-1.5 leading-snug text-[var(--fg)]">{project.name}</h3>
+            <p class="font-mono text-xs uppercase tracking-wider mb-4 text-[var(--accent)]">
               {project.tagline}
             </p>
-            <p class="text-sm leading-[1.8] text-[#777]">
-              {project.description}
-            </p>
+            <p class="text-sm leading-[1.75] text-[var(--fg-muted)]">{project.description}</p>
           </div>
-          <div class="w-full h-px my-4 bg-[#E8E8E8]" />
+          <div class="w-full h-px my-5 bg-[var(--border)]" />
           <div class="flex flex-wrap gap-1.5 mb-4">
             {project.tech.map((t) => (
-              <span class="font-mono text-[0.65rem] px-2 py-0.5 rounded border border-[#E8E8E8] bg-[#F5F5F5] text-[#AAA]">
+              <span class="font-mono text-[0.65rem] px-2 py-0.5 border border-[var(--border)] text-[var(--fg-subtle)]">
                 {t}
               </span>
             ))}
@@ -39,7 +42,7 @@ import { projects } from "../data/content";
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="text-xs font-medium text-[#444] hover:text-[#1A1A1A] transition-colors"
+                  class="font-mono text-xs text-[var(--fg-muted)] hover:text-[var(--accent)] transition-colors"
                 >
                   View on GitHub →
                 </a>
@@ -49,7 +52,7 @@ import { projects } from "../data/content";
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="text-xs font-medium text-[#444] hover:text-[#1A1A1A] transition-colors"
+                  class="font-mono text-xs text-[var(--fg-muted)] hover:text-[var(--accent)] transition-colors"
                 >
                   Visit site →
                 </a>

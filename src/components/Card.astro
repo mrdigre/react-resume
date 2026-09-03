@@ -2,16 +2,19 @@
 interface Props {
   class?: string;
   id?: string;
+  highlight?: boolean;
 }
 
-const { class: className = "", id } = Astro.props;
+const { class: className = "", id, highlight = false } = Astro.props;
 ---
 
 <div
   id={id}
   class:list={[
-    "rounded-xl p-6 h-full flex flex-col bg-white border border-[#E8E8E8] transition-all duration-300",
-    "hover:border-[#D0D0D0] hover:shadow-[0_2px_12px_rgba(0,0,0,0.04)]",
+    "p-6 h-full flex flex-col bg-[var(--bg-elevated)] border transition-all duration-300",
+    highlight
+      ? "border-[var(--border-strong)] shadow-[0_0_28px_-8px_var(--accent)]"
+      : "border-[var(--border)] hover:border-[var(--border-strong)]",
     className,
   ]}
 >

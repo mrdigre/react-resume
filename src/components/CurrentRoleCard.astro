@@ -4,20 +4,20 @@ import SectionLabel from "./SectionLabel.astro";
 import { currentRole } from "../data/content";
 ---
 
-<Card class="justify-between gap-0">
+<Card class="justify-between gap-0" highlight>
   <div>
     <SectionLabel>Current</SectionLabel>
-    <p class="text-lg font-bold leading-tight mb-1 text-[#1A1A1A]">
+    <p class="text-xl font-bold leading-tight mb-1 text-[var(--fg)]">
       {currentRole.company}
     </p>
-    <p class="text-sm mb-3 text-[#444]">
+    <p class="font-mono text-xs mb-4 text-[var(--accent)]">
       {currentRole.title}
     </p>
-    <p class="text-sm leading-[1.8] text-[#777]">
+    <p class="text-sm leading-[1.8] text-[var(--fg-muted)]">
       {currentRole.description}
     </p>
   </div>
-  <p class="font-mono text-xs mt-4 text-[#AAA]">
+  <p class="font-mono text-xs mt-4 text-[var(--fg-subtle)]">
     {currentRole.period}
   </p>
 </Card>
