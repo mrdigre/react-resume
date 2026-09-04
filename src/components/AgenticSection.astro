@@ -1,7 +1,14 @@
 ---
 import Card from "./Card.astro";
 import SectionLabel from "./SectionLabel.astro";
-import { agentMethod } from "../data/content";
+import type { SiteContent } from "../i18n/types";
+
+interface Props {
+  content: SiteContent;
+}
+
+const { content } = Astro.props;
+const { agentMethod } = content;
 ---
 
 <div class="mb-16 md:mb-20">

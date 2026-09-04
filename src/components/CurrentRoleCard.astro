@@ -1,12 +1,19 @@
 ---
 import Card from "./Card.astro";
 import SectionLabel from "./SectionLabel.astro";
-import { currentRole } from "../data/content";
+import type { SiteContent } from "../i18n/types";
+
+interface Props {
+  content: SiteContent;
+}
+
+const { content } = Astro.props;
+const { currentRole } = content;
 ---
 
 <Card class="justify-between gap-0" highlight>
   <div>
-    <SectionLabel>Current</SectionLabel>
+    <SectionLabel>{currentRole.label}</SectionLabel>
     <p class="text-xl font-bold leading-tight mb-1 text-[var(--fg)]">
       {currentRole.company}
     </p>

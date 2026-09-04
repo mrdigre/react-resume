@@ -1,13 +1,20 @@
 ---
 import SectionLabel from "./SectionLabel.astro";
-import { skillGroups } from "../data/content";
+import type { SiteContent } from "../i18n/types";
+
+interface Props {
+  content: SiteContent;
+}
+
+const { content } = Astro.props;
+const { skillGroups } = content;
 ---
 
 <div class="mb-16 md:mb-20">
-  <SectionLabel index="02.2">Core Stack</SectionLabel>
+  <SectionLabel index="02.2">{skillGroups.label}</SectionLabel>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
     {
-      skillGroups.map((group) => (
+      skillGroups.groups.map((group) => (
         <div class="border border-[var(--border)] bg-[var(--bg-elevated)] p-6">
           <p class="font-mono text-xs text-[var(--accent)] mb-2">{group.index}</p>
           <p class="font-semibold text-base mb-3 text-[var(--fg)]">{group.label}</p>

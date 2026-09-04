@@ -1,20 +1,20 @@
 ---
 import { Analytics } from "@vercel/analytics/react";
-import Layout from "../layouts/Layout.astro";
-import ChapterNav from "../components/ChapterNav.astro";
-import Hero from "../components/Hero.astro";
-import OriginSection from "../components/OriginSection.astro";
-import AgenticSection from "../components/AgenticSection.astro";
-import SkillsSection from "../components/SkillsSection.astro";
-import ProjectsSection from "../components/ProjectsSection.astro";
-import SectionLabel from "../components/SectionLabel.astro";
-import CurrentRoleCard from "../components/CurrentRoleCard.astro";
-import LetsBuildCard from "../components/LetsBuildCard.astro";
-import { content } from "../i18n/en";
+import Layout from "../../layouts/Layout.astro";
+import ChapterNav from "../../components/ChapterNav.astro";
+import Hero from "../../components/Hero.astro";
+import OriginSection from "../../components/OriginSection.astro";
+import AgenticSection from "../../components/AgenticSection.astro";
+import SkillsSection from "../../components/SkillsSection.astro";
+import ProjectsSection from "../../components/ProjectsSection.astro";
+import SectionLabel from "../../components/SectionLabel.astro";
+import CurrentRoleCard from "../../components/CurrentRoleCard.astro";
+import LetsBuildCard from "../../components/LetsBuildCard.astro";
+import { content } from "../../i18n/es";
 ---
 
-<Layout lang="en" path="/" title={content.meta.title} description={content.meta.description} jobTitle={content.meta.jobTitle}>
-  <ChapterNav content={content} switchHref="/es/" switchLabel="ES" />
+<Layout lang="es" path="/es/" title={content.meta.title} description={content.meta.description} jobTitle={content.meta.jobTitle}>
+  <ChapterNav content={content} switchHref="/" switchLabel="EN" />
 
   <Hero content={content} />
 

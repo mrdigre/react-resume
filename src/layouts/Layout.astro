@@ -2,20 +2,27 @@
 import "../styles/global.css";
 
 interface Props {
+  lang?: "en" | "es";
+  path?: string;
   title?: string;
   description?: string;
+  jobTitle?: string;
 }
 
 const {
+  lang = "en",
+  path = "/",
   title = "Manuel Digregorio — Solutions Architect · AI Systems",
   description = "Manuel Digregorio — Solutions Architect at Sumsub. I design integrations, software architectures, and AI pipelines that run in production, connecting enterprise infrastructure with modern software.",
+  jobTitle = "Solutions Architect · AI Systems",
 } = Astro.props;
 
-const siteUrl = "https://mrdigre.vercel.app/";
+const siteUrl = "https://mrdigre.vercel.app";
+const canonicalUrl = `${siteUrl}${path}`;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/md.svg" />
@@ -29,15 +36,19 @@ const siteUrl = "https://mrdigre.vercel.app/";
       content="Manuel Digregorio, Manu Digregorio, Solutions Architect, Forward-Deployed Engineer, Solutions Engineer, AI Agent Developer, Agentic Systems, LLM Integration, Anthropic Claude API, FastAPI, Python, Sumsub, Industrial Engineer, Mendoza, Argentina"
     />
 
-    <link rel="canonical" href={siteUrl} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="en" href={`${siteUrl}/`} />
+    <link rel="alternate" hreflang="es" href={`${siteUrl}/es/`} />
+    <link rel="alternate" hreflang="x-default" href={`${siteUrl}/`} />
 
     <!-- Open Graph -->
     <meta property="og:type" content="profile" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content={siteUrl} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:locale" content={lang === "es" ? "es_AR" : "en_US"} />
     <meta property="og:site_name" content="Manuel Digregorio" />
-    <meta property="og:image" content={`${siteUrl}md.svg`} />
+    <meta property="og:image" content={`${siteUrl}/md.svg`} />
     <meta property="profile:first_name" content="Manuel" />
     <meta property="profile:last_name" content="Digregorio" />
 
@@ -45,7 +56,7 @@ const siteUrl = "https://mrdigre.vercel.app/";
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={`${siteUrl}md.svg`} />
+    <meta name="twitter:image" content={`${siteUrl}/md.svg`} />
 
     <title>{title}</title>
 
@@ -60,12 +71,11 @@ const siteUrl = "https://mrdigre.vercel.app/";
         givenName: "Manuel",
         familyName: "Digregorio",
         alternateName: ["Manu Digregorio", "Manuel Di Gregorio"],
-        jobTitle: "Solutions Architect · AI Systems",
-        description:
-          "Solutions Architect at Sumsub designing integrations, software architectures, and AI pipelines that run in production — connecting enterprise infrastructure with modern software.",
+        jobTitle,
+        description,
         email: "mailto:manudigregorio@gmail.com",
-        url: siteUrl,
-        image: `${siteUrl}md.svg`,
+        url: canonicalUrl,
+        image: `${siteUrl}/md.svg`,
         sameAs: [
           "https://linkedin.com/in/mrdigre",
           "https://github.com/mrdigre",

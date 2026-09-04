@@ -1,6 +1,13 @@
 ---
 import SectionLabel from "./SectionLabel.astro";
-import { originStory } from "../data/content";
+import type { SiteContent } from "../i18n/types";
+
+interface Props {
+  content: SiteContent;
+}
+
+const { content } = Astro.props;
+const { originStory } = content;
 ---
 
 <section id="origin" class="max-w-6xl mx-auto px-6 md:px-20 py-20 md:py-28 scroll-mt-20">

@@ -1,11 +1,14 @@
 ---
-import { hero } from "../data/content";
+import type { SiteContent } from "../i18n/types";
 
-const chapters = [
-  { id: "origin", label: "01 — ORIGIN" },
-  { id: "build", label: "02 — BUILD" },
-  { id: "now", label: "03 — NOW" },
-];
+interface Props {
+  content: SiteContent;
+  switchHref: string;
+  switchLabel: string;
+}
+
+const { content, switchHref, switchLabel } = Astro.props;
+const { hero, nav } = content;
 ---
 
 <header
@@ -17,7 +20,7 @@ const chapters = [
 
   <nav id="chapter-nav" class="hidden sm:flex items-center gap-8 font-mono text-xs tracking-[0.12em]">
     {
-      chapters.map((c) => (
+      nav.chapters.map((c) => (
         <a
           href={`#${c.id}`}
           data-chapter={c.id}
@@ -29,12 +32,20 @@ const chapters = [
     }
   </nav>
 
-  <a
-    href="#now"
-    class="font-mono text-xs tracking-[0.1em] px-3 py-1.5 border border-[var(--border-strong)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-[var(--bg-panel)] transition-colors"
-  >
-    CONTACT
-  </a>
+  <div class="flex items-center gap-4">
+    <a
+      href={switchHref}
+      class="font-mono text-xs tracking-[0.1em] text-[var(--fg-subtle)] hover:text-[var(--accent)] transition-colors"
+    >
+      {switchLabel}
+    </a>
+    <a
+      href="#now"
+      class="font-mono text-xs tracking-[0.1em] px-3 py-1.5 border border-[var(--border-strong)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-[var(--bg-panel)] transition-colors"
+    >
+      {nav.contact}
+    </a>
+  </div>
 </header>
 
 <style>

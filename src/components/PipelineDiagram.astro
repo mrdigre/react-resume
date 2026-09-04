@@ -1,11 +1,17 @@
 ---
-import { pipeline } from "../data/content";
+import type { PipelineStage } from "../i18n/types";
 
-const n = pipeline.length;
+interface Props {
+  stages: PipelineStage[];
+  label: string;
+}
+
+const { stages, label } = Astro.props;
+const n = stages.length;
 ---
 
 <div>
-  <p class="font-mono text-xs tracking-[0.14em] text-[var(--fg-subtle)] mb-6">// CAREER_PIPELINE</p>
+  <p class="font-mono text-xs tracking-[0.14em] text-[var(--fg-subtle)] mb-6">{label}</p>
   <div class="relative w-full overflow-x-auto">
     <svg viewBox={`0 0 1200 90`} class="w-full min-w-[640px] h-auto" preserveAspectRatio="xMinYMid meet">
       <line x1="30" y1="46" x2="1170" y2="46" stroke="var(--border-strong)" stroke-width="1.5" opacity="0.5" />
@@ -20,7 +26,7 @@ const n = pipeline.length;
         opacity="0.7"
       />
       {
-        pipeline.map((stage, i) => {
+        stages.map((stage, i) => {
           const x = 30 + (i * (1140 / (n - 1)));
           const r = stage.emphasis ? 9 : 6;
           return (
